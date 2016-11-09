@@ -15,6 +15,10 @@
 		F78042581DD2B796003DE994 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F78042561DD2B796003DE994 /* LaunchScreen.storyboard */; };
 		F78042631DD2B796003DE994 /* FiveSecondsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F78042621DD2B796003DE994 /* FiveSecondsTests.m */; };
 		F780426E1DD2B796003DE994 /* FiveSecondsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F780426D1DD2B796003DE994 /* FiveSecondsUITests.m */; };
+		F780427D1DD2C081003DE994 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F780427C1DD2C081003DE994 /* AVFoundation.framework */; };
+		F780427F1DD2C1A8003DE994 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F780427E1DD2C1A8003DE994 /* AVKit.framework */; };
+		F78042811DD2C631003DE994 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78042801DD2C631003DE994 /* CoreMedia.framework */; };
+		F78042831DD2C6E7003DE994 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78042821DD2C6E7003DE994 /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		F78042691DD2B796003DE994 /* FiveSecondsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FiveSecondsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F780426D1DD2B796003DE994 /* FiveSecondsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FiveSecondsUITests.m; sourceTree = "<group>"; };
 		F780426F1DD2B796003DE994 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F780427C1DD2C081003DE994 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F780427E1DD2C1A8003DE994 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		F78042801DD2C631003DE994 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		F78042821DD2C6E7003DE994 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F78042831DD2C6E7003DE994 /* CoreGraphics.framework in Frameworks */,
+				F78042811DD2C631003DE994 /* CoreMedia.framework in Frameworks */,
+				F780427F1DD2C1A8003DE994 /* AVKit.framework in Frameworks */,
+				F780427D1DD2C081003DE994 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +97,7 @@
 				F78042611DD2B796003DE994 /* FiveSecondsTests */,
 				F780426C1DD2B796003DE994 /* FiveSecondsUITests */,
 				F78042461DD2B796003DE994 /* Products */,
+				F780427B1DD2C081003DE994 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,6 +151,17 @@
 				F780426F1DD2B796003DE994 /* Info.plist */,
 			);
 			path = FiveSecondsUITests;
+			sourceTree = "<group>";
+		};
+		F780427B1DD2C081003DE994 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F78042821DD2C6E7003DE994 /* CoreGraphics.framework */,
+				F78042801DD2C631003DE994 /* CoreMedia.framework */,
+				F780427E1DD2C1A8003DE994 /* AVKit.framework */,
+				F780427C1DD2C081003DE994 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
