@@ -102,33 +102,41 @@
 //    picker.showsCameraControls = NO;
 //    
 //    [self presentViewController:picker animated:YES completion:NULL];
-    
-    for (AVCaptureConnection *connection in self.stillImageOutput.connections) {
-        for (AVCaptureInputPort *port in [connection inputPorts]) {
-            if ([[port mediaType] isEqual:AVMediaTypeVideo] ) {
-                self.videoConnection = connection;
-                break;
-            }
-        }
-        if (self.videoConnection) { break; }
-    }
 
-    __weak typeof(self) weakSelf = self;
-    [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:self.videoConnection completionHandler:^(CMSampleBufferRef imageSampleBuffer, NSError *error) {
-         CFDictionaryRef exifAttachments = CMGetAttachment(imageSampleBuffer, kCGImagePropertyExifDictionary, NULL);
-         if (exifAttachments) {
-             // Do something with the attachments.
-         }
-         // Continue as appropriate.
-     }];
-
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self dummyFunction];
-    });
-    NSLog(@"Here...");
+    [self captureVideoAfter:2];
+    [self captureVideoAfter:4];
+    [self captureVideoAfter:6];
 }
 
--(void)dummyFunction {
+-(void)captureVideoAfter:(NSTimeInterval)time_in_seconds {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(time_in_seconds * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSLog(@"Taking Photo At: %@", [NSDate date]);
+        for (AVCaptureConnection *connection in self.stillImageOutput.connections) {
+            for (AVCaptureInputPort *port in [connection inputPorts]) {
+                if ([[port mediaType] isEqual:AVMediaTypeVideo] ) {
+                    self.videoConnection = connection;
+                    break;
+                }
+            }
+            if (self.videoConnection) { break; }
+        }
+        
+        __weak typeof(self) weakSelf = self;
+        [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:self.videoConnection completionHandler:^(CMSampleBufferRef imageSampleBuffer, NSError *error) {
+            CFDictionaryRef exifAttachments = CMGetAttachment(imageSampleBuffer, kCGImagePropertyExifDictionary, NULL);
+            if (exifAttachments) {
+                // Do something with the attachments.
+                NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageSampleBuffer];
+                UIImage *image = [[UIImage alloc] initWithData:imageData];
+                UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+                NSLog(@"Done Taking Photo At: %@", [NSDate date]);
+            }
+            // Continue as appropriate.
+        }];
+    });
+}
+
+-(void)photoSaved {
     NSLog(@"After 2 seconds");
 }
 
