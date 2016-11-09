@@ -39,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F723E7A81DD3D970001E8FE0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F78042451DD2B796003DE994 /* FiveSeconds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FiveSeconds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F78042491DD2B796003DE994 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F780424B1DD2B796003DE994 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -66,9 +67,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F780427F1DD2C1A8003DE994 /* AVKit.framework in Frameworks */,
 				F78042831DD2C6E7003DE994 /* CoreGraphics.framework in Frameworks */,
 				F78042811DD2C631003DE994 /* CoreMedia.framework in Frameworks */,
-				F780427F1DD2C1A8003DE994 /* AVKit.framework in Frameworks */,
 				F780427D1DD2C081003DE994 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +157,7 @@
 		F780427B1DD2C081003DE994 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F723E7A81DD3D970001E8FE0 /* MobileCoreServices.framework */,
 				F78042821DD2C6E7003DE994 /* CoreGraphics.framework */,
 				F78042801DD2C631003DE994 /* CoreMedia.framework */,
 				F780427E1DD2C1A8003DE994 /* AVKit.framework */,
@@ -534,6 +536,7 @@
 				F78042741DD2B796003DE994 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F78042751DD2B796003DE994 /* Build configuration list for PBXNativeTarget "FiveSecondsTests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +545,7 @@
 				F78042771DD2B796003DE994 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F78042781DD2B796003DE994 /* Build configuration list for PBXNativeTarget "FiveSecondsUITests" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +554,7 @@
 				F780427A1DD2B796003DE994 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

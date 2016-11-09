@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVKit/AVKit.h>
 
 @interface ViewController : UIViewController<UIImagePickerControllerDelegate>
 
-@property (strong, nonatomic) IBOutlet UIButton *takePhotoButton;
-@property (strong, nonatomic) IBOutlet UIButton *startButton;
-@property (strong, nonatomic) IBOutlet UIImageView *pickerImageView;
-@property (strong, nonatomic) IBOutlet UIView *videoPlayerView;
+@property (nonatomic, strong) IBOutlet UIToolbar *toolbar;
+@property (nonatomic, strong) IBOutlet AVPlayerViewController *playerViewController;
+@property (nonatomic, strong) IBOutlet UIView *containerView;
 
 -(IBAction)takePhoto:(id)sender;
 -(IBAction)startVideo:(id)sender;

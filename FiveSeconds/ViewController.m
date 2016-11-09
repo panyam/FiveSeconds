@@ -11,27 +11,36 @@
 #import <CoreMedia/CoreMedia.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import <ImageIO/ImageIO.h>
+#import <MobileCoreServices/UTCoreTypes.h>
+#import <MediaPlayer/MediaPlayer.h>
+#import <AVKit/AVKit.h>
 
 @interface ViewController ()
 
 @property (nonatomic, strong) AVCaptureStillImageOutput *stillImageOutput;
 @property (nonatomic, strong) AVCaptureConnection *videoConnection;
-@property (nonatomic, strong)     AVCaptureSession *captureSession;
-
+@property (nonatomic, strong) AVCaptureSession *captureSession;
 @end
 
 @implementation ViewController
 
-@synthesize startButton;
-@synthesize takePhotoButton;
-@synthesize pickerImageView;
-@synthesize videoPlayerView;
+@synthesize toolbar;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
+ 
+    self.playerViewController = [[AVPlayerViewController alloc] init];
+    [self addChildViewController:self.playerViewController];
+    [self.containerView addSubview:self.playerViewController.view];
     [self initializeCamera];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    CGRect ourFrame = self.view.frame;
+    CGRect toolbarFrame = self.toolbar.frame;
+    CGSize containerSize = self.containerView.frame.size;
+    self.playerViewController.view.frame = CGRectMake(0,0, containerSize.width, containerSize.height);
+    [super viewDidAppear:animated];
 }
 
 -(void)initializeCamera {
@@ -140,16 +149,27 @@
     NSLog(@"After 2 seconds");
 }
 
--(IBAction)startVideo:(id)sender {
+
+-(IBAction)loadVideo:(id)sender {
+    UIImagePickerController *mediaLibrary = [[UIImagePickerController alloc] init];
+    mediaLibrary.sourceType = UIImagePickerControllerSourceTypePhotoLibrary | UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    mediaLibrary.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
+    mediaLibrary.delegate = self;
+    mediaLibrary.allowsEditing = NO;
+    [self presentViewController:mediaLibrary animated:YES completion:NO];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     NSLog(@"here");
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    NSURL *url = [info objectForKey:UIImagePickerControllerMediaURL];
+    AVPlayer *player = [AVPlayer playerWithURL:url];
+    self.playerViewController.player = player;
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     NSLog(@"here");
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
-
 
 @end
