@@ -207,6 +207,7 @@
 				TargetAttributes = {
 					F78042441DD2B796003DE994 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = GYYZ2J5D87;
 						ProvisioningStyle = Automatic;
 					};
 					F780425D1DD2B796003DE994 = {
@@ -424,6 +425,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GYYZ2J5D87;
 				INFOPLIST_FILE = FiveSeconds/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackery.FiveSeconds;
@@ -435,6 +437,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GYYZ2J5D87;
 				INFOPLIST_FILE = FiveSeconds/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackery.FiveSeconds;
