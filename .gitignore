@@ -1,4 +1,6 @@
 
+Pods/
+Podfile.lock
 dist
 gen
 *.swp
