@@ -39,17 +39,23 @@
                                 <frame key="frameInset" height="623" maxY="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             </containerView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="luN-Qo-BC1" userLabel="YoutubeVideoView" customClass="YTPlayerView">
+                                <frame key="frameInset" minX="67" minY="269" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="containerView" destination="jFL-Qr-KkD" id="qM9-De-Dbz"/>
                         <outlet property="toolbar" destination="lCP-sB-IbF" id="hqI-Ag-5wy"/>
+                        <outlet property="ytPlayerView" destination="luN-Qo-BC1" id="9L3-gv-hL9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="36" y="40.929535232383813"/>
+            <point key="canvasLocation" x="-121" y="-33"/>
         </scene>
     </scenes>
 </document>

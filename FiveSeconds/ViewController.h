@@ -8,15 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import <AVKit/AVKit.h>
+#import "YTPlayerView.h"
 
-@interface ViewController : UIViewController<UIImagePickerControllerDelegate>
+@interface ViewController : UIViewController<UIImagePickerControllerDelegate, YTPlayerViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UIToolbar *toolbar;
 @property (nonatomic, strong) IBOutlet AVPlayerViewController *playerViewController;
+@property (nonatomic, strong) IBOutlet YTPlayerView *ytPlayerView;
 @property (nonatomic, strong) IBOutlet UIView *containerView;
 
--(IBAction)takePhoto:(id)sender;
--(IBAction)startVideo:(id)sender;
+-(IBAction)capturePhotos:(id)sender;
+-(IBAction)loadVideo:(id)sender;
 
 @end
 
