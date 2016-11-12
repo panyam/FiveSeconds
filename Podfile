@@ -6,5 +6,6 @@ source "https://github.com/CocoaPods/Specs.git"
 target "FiveSeconds" do
     pod "youtube-ios-player-helper"
     pod "FBSDKCoreKit"
+    pod "FBSDKShareKit"
 end
 

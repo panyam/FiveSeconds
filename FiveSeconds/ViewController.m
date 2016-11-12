@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "FbSharing.h"
 #import <AVFoundation/AVFoundation.h>
 #import <CoreMedia/CoreMedia.h>
 #import <CoreGraphics/CoreGraphics.h>
@@ -156,6 +157,8 @@ typedef enum {
                 UIImage *image = [[UIImage alloc] initWithData:imageData];
                 UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
                 NSLog(@"Done Taking Photo At: %@", [NSDate date]);
+                FbSharing *fbSharing = [[FbSharing alloc] init];
+                [fbSharing shareImage:image fromVC:self];
             }
             // Continue as appropriate.
         }];

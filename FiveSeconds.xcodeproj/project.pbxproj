@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		838BB7C8656D3F2C2FD8E6AB /* libPods-FiveSeconds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77F6B9D1E52AB47808DC98DF /* libPods-FiveSeconds.a */; };
+		E203EF981DD5669700E0F780 /* FbSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = E203EF971DD5669700E0F780 /* FbSharing.m */; };
 		F780424A1DD2B796003DE994 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F78042491DD2B796003DE994 /* main.m */; };
 		F780424D1DD2B796003DE994 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F780424C1DD2B796003DE994 /* AppDelegate.m */; };
 		F78042501DD2B796003DE994 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F780424F1DD2B796003DE994 /* ViewController.m */; };
@@ -43,6 +44,8 @@
 		014B811B73F1B4B0839630F5 /* Pods-FiveSeconds.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiveSeconds.release.xcconfig"; path = "Pods/Target Support Files/Pods-FiveSeconds/Pods-FiveSeconds.release.xcconfig"; sourceTree = "<group>"; };
 		06D0F5568D24815FA967E280 /* Pods-FiveSeconds.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiveSeconds.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FiveSeconds/Pods-FiveSeconds.debug.xcconfig"; sourceTree = "<group>"; };
 		77F6B9D1E52AB47808DC98DF /* libPods-FiveSeconds.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FiveSeconds.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E203EF961DD5664700E0F780 /* FbSharing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FbSharing.h; sourceTree = "<group>"; };
+		E203EF971DD5669700E0F780 /* FbSharing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FbSharing.m; sourceTree = "<group>"; };
 		F723E7A81DD3D970001E8FE0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F78042451DD2B796003DE994 /* FiveSeconds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FiveSeconds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F78042491DD2B796003DE994 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -139,6 +142,8 @@
 				F78042561DD2B796003DE994 /* LaunchScreen.storyboard */,
 				F78042591DD2B796003DE994 /* Info.plist */,
 				F78042481DD2B796003DE994 /* Supporting Files */,
+				E203EF961DD5664700E0F780 /* FbSharing.h */,
+				E203EF971DD5669700E0F780 /* FbSharing.m */,
 			);
 			path = FiveSeconds;
 			sourceTree = "<group>";
@@ -369,6 +374,7 @@
 			files = (
 				F78042501DD2B796003DE994 /* ViewController.m in Sources */,
 				F780424D1DD2B796003DE994 /* AppDelegate.m in Sources */,
+				E203EF981DD5669700E0F780 /* FbSharing.m in Sources */,
 				F780424A1DD2B796003DE994 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
