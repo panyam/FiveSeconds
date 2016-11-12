@@ -49,7 +49,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="gQt-1h-9oQ"/>
                                     <barButtonItem title="Record" id="vzw-9d-dni">
                                         <connections>
-                                            <action selector="takePhoto:" destination="BYZ-38-t0r" id="FbN-nh-WQZ"/>
+                                            <action selector="capturePhotos:" destination="BYZ-38-t0r" id="FbN-nh-WQZ"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
