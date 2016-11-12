@@ -209,6 +209,8 @@ typedef enum {
 # pragma mark - Album Video Loading
 
 -(void)loadVideoFromAlbum {
+    self.ytPlayerView.hidden = YES;
+    self.playerViewController.view.hidden = NO;
     UIImagePickerController *mediaLibrary = [[UIImagePickerController alloc] init];
     mediaLibrary.sourceType = UIImagePickerControllerSourceTypePhotoLibrary | UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     mediaLibrary.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
@@ -233,6 +235,8 @@ typedef enum {
 # pragma mark - YT Video Loading
 
 -(void)loadVideoFromYouTube {
+    self.ytPlayerView.hidden = NO;
+    self.playerViewController.view.hidden = YES;
     [self performSegueWithIdentifier:@"youtube_vc" sender:self];
 }
 

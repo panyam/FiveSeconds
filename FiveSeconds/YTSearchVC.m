@@ -16,6 +16,7 @@
 @implementation YTSearchVC
 
 @synthesize searchBar;
+@synthesize searchBarController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,9 +45,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     YTVideoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YTVideoCell"];
-    if (cell == nil) {
-        cell = [[YTVideoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"YTVideoCell"];
-    }
     cell.titleLabel.text = [NSString stringWithFormat:@"Desc: %d", indexPath.row];
     return cell;
 }
