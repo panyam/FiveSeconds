@@ -38,16 +38,17 @@ typedef enum {
 @synthesize stillImageOutput;
 @synthesize videoConnection;
 @synthesize captureSession;
+@synthesize containerView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initializeCamera];
  
-//    self.ytPlayerView.delegate = self;
+    self.ytPlayerView.delegate = self;
     self.playerViewController = [[AVPlayerViewController alloc] init];
     [self addChildViewController:self.playerViewController];
     [self.containerView addSubview:self.playerViewController.view];
-//    [self.containerView addSubview:self.ytPlayerView];
+    [self.containerView addSubview:self.ytPlayerView];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -178,9 +179,8 @@ typedef enum {
                                     {
                                         self.requestedVideoSource = RequestedVideoSource_Album;
                                         //Do some thing here
-                                        [view dismissViewControllerAnimated:YES completion:^{
-                                            [self loadVideoFromAlbum];
-                                        }];
+                                        [view dismissViewControllerAnimated:YES completion:nil];
+                                        [self loadVideoFromAlbum];
                                     }];
     UIAlertAction* selectYoutube = [UIAlertAction
                          actionWithTitle:@"Youtube"
@@ -189,9 +189,8 @@ typedef enum {
                          {
                              self.requestedVideoSource = RequestedVideoSource_YouTube;
                              //Do some thing here
-                             [view dismissViewControllerAnimated:YES completion:^{
-                                 [self loadVideoFromYouTube];
-                             }];
+                             [view dismissViewControllerAnimated:YES completion:nil];
+                             [self loadVideoFromYouTube];
                          }];
     UIAlertAction* cancel = [UIAlertAction
                              actionWithTitle:@"Cancel"
@@ -234,6 +233,7 @@ typedef enum {
 # pragma mark - YT Video Loading
 
 -(void)loadVideoFromYouTube {
+    [self performSegueWithIdentifier:@"youtube_vc" sender:self];
 }
 
 # pragma mark - YT Video Player
