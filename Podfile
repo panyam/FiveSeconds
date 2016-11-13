@@ -8,5 +8,7 @@ target "FiveSeconds" do
     pod "FBSDKCoreKit"
     pod "FBSDKShareKit"
     pod "SPiOSUtils"
+    pod "AFNetworking"
+    pod "SDWebImage"
 end
 

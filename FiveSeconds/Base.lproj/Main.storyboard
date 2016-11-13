@@ -92,31 +92,31 @@
         <scene sceneID="KSR-nq-NOV">
             <objects>
                 <tableViewController id="94Z-b7-Gj3" customClass="YTSearchVC" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bEg-bV-rHV">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" id="bEg-bV-rHV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YTVideoCell" rowHeight="70" id="dnA-2H-2Ch" customClass="YTVideoCell">
-                                <rect key="frame" x="0.0" y="92" width="375" height="70"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YTVideoCell" rowHeight="120" id="dnA-2H-2Ch" customClass="YTVideoCell">
+                                <rect key="frame" x="0.0" y="92" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dnA-2H-2Ch" id="HXZ-LC-P53">
-                                    <frame key="frameInset" width="375" height="69.5"/>
+                                    <frame key="frameInset" width="375" height="119"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="itG-zt-wpP">
-                                            <frame key="frameInset" minX="5" width="70" height="70"/>
+                                            <frame key="frameInset" minX="5" minY="-3" width="120" height="120"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Video Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k58-6R-L67">
-                                            <frame key="frameInset" minX="134" minY="8" width="233" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Video Title" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k58-6R-L67">
+                                            <frame key="frameInset" minX="134" minY="8" width="233" height="74"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Published Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kI-hX-tbq">
-                                            <frame key="frameInset" minX="134" minY="40" width="233" height="21"/>
+                                            <frame key="frameInset" minX="134" minY="90" width="233" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -192,8 +192,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="fY0-7O-OSL" kind="relationship" relationship="viewControllers" id="4ko-lh-Nb9"/>
-                        <segue destination="94Z-b7-Gj3" kind="relationship" relationship="viewControllers" id="BJT-c3-f38"/>
+                        <segue destination="94Z-b7-Gj3" kind="relationship" relationship="viewControllers" id="4qd-ax-mvY"/>
+                        <segue destination="fY0-7O-OSL" kind="relationship" relationship="viewControllers" id="U5g-9b-Mxu"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lGZ-JM-x9T" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SPiOSUtils/SPMobileUtils.h>
 
-@interface YTSearchVC : UITableViewController<UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating>
+@interface YTSearchVC : UITableViewController<UISearchBarDelegate>
 
 @property (nonatomic,strong) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UISearchController *searchController;
 @property BOOL searchControllerWasActive;
 @property BOOL searchControllerSearchFieldWasFirstResponder;
+@property (nonatomic, copy) NSString *searchTerm;
+
 @end
