@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		838BB7C8656D3F2C2FD8E6AB /* libPods-FiveSeconds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77F6B9D1E52AB47808DC98DF /* libPods-FiveSeconds.a */; };
 		E203EF981DD5669700E0F780 /* FbSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = E203EF971DD5669700E0F780 /* FbSharing.m */; };
+		F73CDF321DD858A600BE5F76 /* FSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F73CDF311DD858A600BE5F76 /* FSUtils.m */; };
 		F75A35BD1DD58A1C00C3A75C /* YTSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F75A35BC1DD58A1C00C3A75C /* YTSearchVC.m */; };
 		F780424A1DD2B796003DE994 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F78042491DD2B796003DE994 /* main.m */; };
 		F780424D1DD2B796003DE994 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F780424C1DD2B796003DE994 /* AppDelegate.m */; };
@@ -49,6 +50,8 @@
 		E203EF961DD5664700E0F780 /* FbSharing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FbSharing.h; sourceTree = "<group>"; };
 		E203EF971DD5669700E0F780 /* FbSharing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FbSharing.m; sourceTree = "<group>"; };
 		F723E7A81DD3D970001E8FE0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		F73CDF301DD858A600BE5F76 /* FSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSUtils.h; sourceTree = "<group>"; };
+		F73CDF311DD858A600BE5F76 /* FSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSUtils.m; sourceTree = "<group>"; };
 		F75A35BB1DD58A1C00C3A75C /* YTSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTSearchVC.h; sourceTree = "<group>"; };
 		F75A35BC1DD58A1C00C3A75C /* YTSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTSearchVC.m; sourceTree = "<group>"; };
 		F78042451DD2B796003DE994 /* FiveSeconds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FiveSeconds.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +157,8 @@
 				F75A35BC1DD58A1C00C3A75C /* YTSearchVC.m */,
 				F7A824CD1DD68176001E5C9A /* YTVideoCell.h */,
 				F7A824CE1DD68176001E5C9A /* YTVideoCell.m */,
+				F73CDF301DD858A600BE5F76 /* FSUtils.h */,
+				F73CDF311DD858A600BE5F76 /* FSUtils.m */,
 			);
 			path = FiveSeconds;
 			sourceTree = "<group>";
@@ -386,6 +391,7 @@
 				F78042501DD2B796003DE994 /* ViewController.m in Sources */,
 				F780424D1DD2B796003DE994 /* AppDelegate.m in Sources */,
 				E203EF981DD5669700E0F780 /* FbSharing.m in Sources */,
+				F73CDF321DD858A600BE5F76 /* FSUtils.m in Sources */,
 				F780424A1DD2B796003DE994 /* main.m in Sources */,
 				F75A35BD1DD58A1C00C3A75C /* YTSearchVC.m in Sources */,
 			);

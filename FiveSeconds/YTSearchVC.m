@@ -16,7 +16,7 @@
 @implementation YTSearchVC
 
 @synthesize searchBar;
-@synthesize searchBarController;
+@synthesize searchController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,6 +26,10 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x,
+                                                       self.searchController.searchBar.frame.origin.y,
+                                                       self.searchController.searchBar.frame.size.width, 44.0);
+    self.tableView.tableHeaderView = self.searchBar;
 }
 
 - (void)didReceiveMemoryWarning {

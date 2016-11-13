@@ -11,7 +11,7 @@
 @interface YTSearchVC : UITableViewController<UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating>
 
 @property (nonatomic,strong) IBOutlet UISearchBar *searchBar;
-@property (strong, nonatomic) IBOutlet UISearchController *searchBarController;
+@property (strong, nonatomic) IBOutlet UISearchController *searchController;
 @property BOOL searchControllerWasActive;
 @property BOOL searchControllerSearchFieldWasFirstResponder;
 @end

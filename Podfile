@@ -7,5 +7,6 @@ target "FiveSeconds" do
     pod "youtube-ios-player-helper"
     pod "FBSDKCoreKit"
     pod "FBSDKShareKit"
+    pod "SPiOSUtils"
 end
 
