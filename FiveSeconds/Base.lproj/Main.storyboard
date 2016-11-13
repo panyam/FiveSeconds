@@ -185,7 +185,7 @@
         <!--Youtube Videos-->
         <scene sceneID="h2P-Bg-ipH">
             <objects>
-                <tabBarController title="Youtube Videos" id="iOF-fT-PZc" sceneMemberID="viewController">
+                <tabBarController title="Youtube Videos" id="iOF-fT-PZc" customClass="YTVideosVC" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="fXT-c3-tA1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

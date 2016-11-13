@@ -15,6 +15,7 @@
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVKit/AVKit.h>
+#import "FSUtils.h"
 
 typedef enum {
     RequestedVideoSource_Album,
@@ -49,7 +50,11 @@ typedef enum {
     [self addChildViewController:self.playerViewController];
     [self.containerView addSubview:self.playerViewController.view];
     [self.containerView addSubview:self.ytPlayerView];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(videoSelected:)
+                                                 name:VideoSelectedNotification object:nil];
 }
+
 
 -(void)viewDidAppear:(BOOL)animated {
 //    CGRect ourFrame = self.view.frame;
@@ -296,6 +301,12 @@ typedef enum {
  */
 - (UIColor *)playerViewPreferredWebViewBackgroundColor:(YTPlayerView *)playerView {
     return [UIColor greenColor];
+}
+
+-(void)videoSelected:(NSNotification *)notification {
+    NSDictionary *videoData = (NSDictionary *)notification.object;
+    NSDictionary *videoId = videoData[@"id"];
+    [self.ytPlayerView loadWithVideoId:videoId[@"videoId"]];
 }
 
 @end
