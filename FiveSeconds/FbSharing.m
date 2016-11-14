@@ -15,7 +15,7 @@
 @implementation FbSharing
 
 - (void)shareImage:(UIImage *)image
-            fromVC:(UIViewController *) vc {
+            fromVC:(UIViewController *)vc {
     // Override point for customization after application launch.
     FBSDKSharePhoto *photo = [[FBSDKSharePhoto alloc] init];
     photo.image = image;

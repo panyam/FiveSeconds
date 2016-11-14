@@ -10,5 +10,6 @@ target "FiveSeconds" do
     pod "SPiOSUtils"
     pod "AFNetworking"
     pod "SDWebImage"
+    pod "iCarousel"
 end
 

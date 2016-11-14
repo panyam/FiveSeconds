@@ -16,6 +16,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVKit/AVKit.h>
 #import "FSUtils.h"
+#import "BrowsePhotosController.h"
 
 typedef enum {
     RequestedVideoSource_Album,
@@ -29,7 +30,7 @@ typedef enum {
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 
 @property (nonatomic) RequestedVideoSource requestedVideoSource;
-
+@property (nonatomic) NSMutableArray<UIImage *> *capturedImages;
 @end
 
 @implementation ViewController
@@ -50,6 +51,7 @@ typedef enum {
     [self addChildViewController:self.playerViewController];
     [self.containerView addSubview:self.playerViewController.view];
     [self.containerView addSubview:self.ytPlayerView];
+    self.capturedImages = [[NSMutableArray alloc] init];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(videoSelected:)
                                                  name:VideoSelectedNotification object:nil];
@@ -163,14 +165,22 @@ typedef enum {
                 UIImage *image = [[UIImage alloc] initWithData:imageData];
                 UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
                 NSLog(@"Done Taking Photo At: %@", [NSDate date]);
-                FbSharing *fbSharing = [[FbSharing alloc] init];
-                [fbSharing shareImage:image fromVC:self];
+                [self.capturedImages addObject:image];
+                if (time_in_seconds == 6) {
+                    [self showCapturedImages];
+                }
             }
             // Continue as appropriate.
         }];
     });
 }
 
+- (void)showCapturedImages
+{
+  
+    BrowsePhotosController *browsePhotosController = [[BrowsePhotosController alloc] initWithImages:self.capturedImages];
+    [self presentViewController:browsePhotosController animated:NO completion:nil];
+}
 
 -(IBAction)loadVideo:(id)sender {
     UIAlertController * view=   [UIAlertController
