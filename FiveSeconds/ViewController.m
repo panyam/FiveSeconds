@@ -6,6 +6,7 @@
 //  Copyright © 2016 Hackery Inc. All rights reserved.
 //
 
+#import <SPiOSUtils/SPMobileUtils.h>
 #import "ViewController.h"
 #import "FbSharing.h"
 #import <AVFoundation/AVFoundation.h>
@@ -31,10 +32,15 @@ typedef enum {
 
 @property (nonatomic) RequestedVideoSource requestedVideoSource;
 @property (nonatomic) NSMutableArray<UIImage *> *capturedImages;
+@property (nonatomic, strong) NSDate *videoStartedTime;
+@property (nonatomic, strong) NSMutableArray *recordedTimes;
+
 @end
 
 @implementation ViewController
 
+@synthesize videoStartedTime;
+@synthesize touchRecordingView;
 @synthesize toolbar;
 @synthesize ytPlayerView;
 @synthesize stillImageOutput;
@@ -52,6 +58,7 @@ typedef enum {
     [self.containerView addSubview:self.playerViewController.view];
     [self.containerView addSubview:self.ytPlayerView];
     self.capturedImages = [[NSMutableArray alloc] init];
+    self.touchRecordingView.hidden = YES;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(videoSelected:)
                                                  name:VideoSelectedNotification object:nil];
@@ -127,6 +134,38 @@ typedef enum {
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)startRecordTimes:(id)sender {
+    self.recordedTimes = nil;
+    self.videoStartedTime = [NSDate date];
+    if (self.ytPlayerView.hidden) {
+        // playing from album
+        [SPMU_ACTIVITY_INDICATOR showWithMessage:@"Starting video..."];
+        [[self.playerViewController player] seekToTime:CMTimeMake(0, 0) completionHandler:^(BOOL finished) {
+            [SPMU_ACTIVITY_INDICATOR hide];
+            self.videoStartedTime = [NSDate date];
+            self.touchRecordingView.hidden = NO;
+            [[self.playerViewController player] play];
+        }];
+    } else {
+        // YT it is
+        [self.ytPlayerView seekToSeconds:0 allowSeekAhead:YES];
+        self.videoStartedTime = [NSDate date];
+        [self.ytPlayerView playVideo];
+        self.touchRecordingView.hidden = NO;
+    }
+}
+
+-(IBAction)stopRecordTimes:(id)sender {
+    self.touchRecordingView.hidden = YES;
+}
+
+-(IBAction)recordCurrentTime:(id)sender {
+    if (self.recordedTimes == nil) {
+        self.recordedTimes = [NSMutableArray array];
+    }
+    [self.recordedTimes addObject:[NSDate date]];
 }
 
 -(IBAction)capturePhotos:(id)sender {

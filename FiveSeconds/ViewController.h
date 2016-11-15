@@ -16,9 +16,13 @@
 @property (nonatomic, strong) IBOutlet AVPlayerViewController *playerViewController;
 @property (nonatomic, strong) IBOutlet YTPlayerView *ytPlayerView;
 @property (nonatomic, strong) IBOutlet UIView *containerView;
+@property (nonatomic, strong) IBOutlet UIView *touchRecordingView;
 
 -(IBAction)capturePhotos:(id)sender;
 -(IBAction)loadVideo:(id)sender;
+-(IBAction)startRecordTimes:(id)sender;
+-(IBAction)stopRecordTimes:(id)sender;
+-(IBAction)recordCurrentTime:(id)sender;
 
 @end
 

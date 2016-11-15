@@ -25,7 +25,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FX9-iV-9i0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1390" y="-221"/>
+            <point key="canvasLocation" x="-1210" y="-199"/>
         </scene>
         <!--FiveSeconds-->
         <scene sceneID="tne-QT-ifu">
@@ -49,30 +49,77 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="gQt-1h-9oQ"/>
                                     <barButtonItem title="Record" id="vzw-9d-dni">
                                         <connections>
-                                            <action selector="capturePhotos:" destination="BYZ-38-t0r" id="FbN-nh-WQZ"/>
+                                            <action selector="startRecordTimes:" destination="BYZ-38-t0r" id="hxP-bj-vwV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="b1J-a8-U1c"/>
+                                    <barButtonItem title="Capture" id="ykc-ab-fbl" userLabel="Capture">
+                                        <connections>
+                                            <action selector="capturePhotos:" destination="BYZ-38-t0r" id="g6M-Zo-vOE"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFL-Qr-KkD"/>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="luN-Qo-BC1" userLabel="YoutubeVideoView" customClass="YTPlayerView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLD-05-Ccj" userLabel="PlayerContainerView">
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFL-Qr-KkD"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="luN-Qo-BC1" userLabel="YoutubeVideoView" customClass="YTPlayerView">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="luN-Qo-BC1" firstAttribute="height" secondItem="pLD-05-Ccj" secondAttribute="height" id="0kx-ZB-PhJ"/>
+                                    <constraint firstItem="jFL-Qr-KkD" firstAttribute="centerY" secondItem="pLD-05-Ccj" secondAttribute="centerY" id="77E-UW-BSj"/>
+                                    <constraint firstItem="jFL-Qr-KkD" firstAttribute="height" secondItem="pLD-05-Ccj" secondAttribute="height" id="Aay-85-L7g"/>
+                                    <constraint firstItem="jFL-Qr-KkD" firstAttribute="width" secondItem="pLD-05-Ccj" secondAttribute="width" id="F9K-Cb-rzW"/>
+                                    <constraint firstItem="luN-Qo-BC1" firstAttribute="centerX" secondItem="pLD-05-Ccj" secondAttribute="centerX" id="Mv5-f8-GEe"/>
+                                    <constraint firstItem="jFL-Qr-KkD" firstAttribute="centerX" secondItem="pLD-05-Ccj" secondAttribute="centerX" id="NoP-ci-K9P"/>
+                                    <constraint firstItem="luN-Qo-BC1" firstAttribute="width" secondItem="pLD-05-Ccj" secondAttribute="width" id="PaC-w2-41s"/>
+                                    <constraint firstItem="luN-Qo-BC1" firstAttribute="centerY" secondItem="pLD-05-Ccj" secondAttribute="centerY" id="xm2-Kd-XgN"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CCf-KW-tkc" userLabel="TouchRecordingView">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUh-Xe-EuG">
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="recordCurrentTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JJx-qo-TuO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSK-jS-QRv">
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <state key="normal" title="Stop"/>
+                                        <connections>
+                                            <action selector="stopRecordTimes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NpP-hd-SU7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="OUh-Xe-EuG" firstAttribute="height" secondItem="CCf-KW-tkc" secondAttribute="height" id="8Ou-9r-DnP"/>
+                                    <constraint firstItem="HSK-jS-QRv" firstAttribute="bottom" secondItem="CCf-KW-tkc" secondAttribute="bottom" id="Avw-jo-xYf"/>
+                                    <constraint firstAttribute="trailing" secondItem="HSK-jS-QRv" secondAttribute="trailing" id="Fue-W7-Sem"/>
+                                    <constraint firstItem="OUh-Xe-EuG" firstAttribute="centerY" secondItem="CCf-KW-tkc" secondAttribute="centerY" id="T0N-CO-ak5"/>
+                                    <constraint firstItem="OUh-Xe-EuG" firstAttribute="centerX" secondItem="CCf-KW-tkc" secondAttribute="centerX" id="cjA-8I-4rL"/>
+                                    <constraint firstItem="OUh-Xe-EuG" firstAttribute="width" secondItem="CCf-KW-tkc" secondAttribute="width" id="v4m-xf-Cmi"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="lCP-sB-IbF" secondAttribute="trailing" constant="-16" id="2M5-29-nPE"/>
-                            <constraint firstItem="lCP-sB-IbF" firstAttribute="centerX" secondItem="luN-Qo-BC1" secondAttribute="centerX" id="4yp-yQ-7th"/>
+                            <constraint firstItem="pLD-05-Ccj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="6wf-lx-Odc"/>
                             <constraint firstItem="lCP-sB-IbF" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="7Kc-rG-9oK"/>
-                            <constraint firstItem="luN-Qo-BC1" firstAttribute="top" secondItem="jFL-Qr-KkD" secondAttribute="top" id="Ca1-Jn-G26"/>
-                            <constraint firstItem="luN-Qo-BC1" firstAttribute="height" secondItem="jFL-Qr-KkD" secondAttribute="height" id="DdN-cP-je3"/>
-                            <constraint firstItem="lCP-sB-IbF" firstAttribute="leading" secondItem="jFL-Qr-KkD" secondAttribute="leading" id="HFT-ki-dqO"/>
-                            <constraint firstItem="luN-Qo-BC1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Mmh-pO-vZh"/>
-                            <constraint firstItem="luN-Qo-BC1" firstAttribute="width" secondItem="jFL-Qr-KkD" secondAttribute="width" id="SlM-rB-3BG"/>
-                            <constraint firstItem="lCP-sB-IbF" firstAttribute="trailing" secondItem="jFL-Qr-KkD" secondAttribute="trailing" id="Ylr-Ye-bIc"/>
-                            <constraint firstItem="lCP-sB-IbF" firstAttribute="top" secondItem="luN-Qo-BC1" secondAttribute="bottom" id="mT9-Ka-Hbb"/>
-                            <constraint firstItem="lCP-sB-IbF" firstAttribute="top" secondItem="jFL-Qr-KkD" secondAttribute="bottom" id="oCb-Cz-8hI"/>
-                            <constraint firstItem="lCP-sB-IbF" firstAttribute="top" secondItem="jFL-Qr-KkD" secondAttribute="bottom" id="qbC-KU-CBz"/>
+                            <constraint firstItem="CCf-KW-tkc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="7Kq-Jj-HW2"/>
+                            <constraint firstItem="pLD-05-Ccj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BwG-Dj-Uc5"/>
+                            <constraint firstItem="CCf-KW-tkc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Bwv-Mc-Gtk"/>
+                            <constraint firstItem="CCf-KW-tkc" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="DSP-i5-dhM"/>
+                            <constraint firstItem="CCf-KW-tkc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="IRt-oE-E6O"/>
+                            <constraint firstItem="CCf-KW-tkc" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="VRj-fB-Jqf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pLD-05-Ccj" secondAttribute="bottom" constant="44" id="cbY-Nc-AtD"/>
+                            <constraint firstItem="pLD-05-Ccj" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="eVe-eR-Lrh"/>
                             <constraint firstItem="lCP-sB-IbF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sXG-nM-EaN"/>
                         </constraints>
                     </view>
@@ -80,6 +127,7 @@
                     <connections>
                         <outlet property="containerView" destination="jFL-Qr-KkD" id="qM9-De-Dbz"/>
                         <outlet property="toolbar" destination="lCP-sB-IbF" id="hqI-Ag-5wy"/>
+                        <outlet property="touchRecordingView" destination="CCf-KW-tkc" id="PYI-AW-vbN"/>
                         <outlet property="ytPlayerView" destination="luN-Qo-BC1" id="9L3-gv-hL9"/>
                         <segue destination="iOF-fT-PZc" kind="show" identifier="youtube_vc" id="umx-HF-iux"/>
                     </connections>
@@ -101,7 +149,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dnA-2H-2Ch" id="HXZ-LC-P53">
-                                    <frame key="frameInset" width="375" height="119"/>
+                                    <frame key="frameInset" width="375" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="itG-zt-wpP">
@@ -166,7 +214,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SVN-aU-7ED" id="k7q-WD-pFK">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
