@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FiveSeconds/ViewController.m"
-            timestampString = "500793912.594076"
+            timestampString = "501306022.504665"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "@interface ViewController()"
-            landmarkType = "2">
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "capturedImages"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,28 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FiveSeconds/ViewController.m"
-            timestampString = "500794504.727325"
+            timestampString = "501306022.504665"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
-            landmarkName = "-showCapturedImages"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FiveSeconds/ViewController.m"
-            timestampString = "500794086.542844"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "-captureVideoAfter:"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "-recordCurrentTime:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

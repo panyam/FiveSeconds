@@ -13,6 +13,7 @@
 		E203EF9D1DD98C9300E0F780 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E203EF9C1DD98C9300E0F780 /* QuartzCore.framework */; };
 		E24D479C1DE14B6300326D0B /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = E24D479A1DE14B6300326D0B /* background.png */; };
 		E24D479D1DE14B6300326D0B /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = E24D479B1DE14B6300326D0B /* page.png */; };
+		E24D47A01DE14EED00326D0B /* BrowsePhotosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D479E1DE14EED00326D0B /* BrowsePhotosVC.m */; };
 		F73CDF3D1DD92A5D00BE5F76 /* FSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F73CDF3C1DD92A5D00BE5F76 /* FSUtils.m */; };
 		F73CDF401DD92BC300BE5F76 /* YTVideosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F73CDF3F1DD92BC300BE5F76 /* YTVideosVC.m */; };
 		F75A35BD1DD58A1C00C3A75C /* YTSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F75A35BC1DD58A1C00C3A75C /* YTSearchVC.m */; };
@@ -59,6 +60,8 @@
 		E203EF9C1DD98C9300E0F780 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E24D479A1DE14B6300326D0B /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		E24D479B1DE14B6300326D0B /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
+		E24D479E1DE14EED00326D0B /* BrowsePhotosVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowsePhotosVC.m; sourceTree = "<group>"; };
+		E24D479F1DE14EED00326D0B /* BrowsePhotosVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowsePhotosVC.h; sourceTree = "<group>"; };
 		F723E7A81DD3D970001E8FE0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F73CDF3B1DD92A5D00BE5F76 /* FSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSUtils.h; sourceTree = "<group>"; };
 		F73CDF3C1DD92A5D00BE5F76 /* FSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSUtils.m; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 				F780424F1DD2B796003DE994 /* ViewController.m */,
 				E203EF991DD977A400E0F780 /* BrowsePhotosController.h */,
 				E203EF9A1DD977C200E0F780 /* BrowsePhotosController.m */,
+				E24D479F1DE14EED00326D0B /* BrowsePhotosVC.h */,
+				E24D479E1DE14EED00326D0B /* BrowsePhotosVC.m */,
 				F78042511DD2B796003DE994 /* Main.storyboard */,
 				F78042541DD2B796003DE994 /* Assets.xcassets */,
 				F78042561DD2B796003DE994 /* LaunchScreen.storyboard */,
@@ -422,6 +427,7 @@
 				F73CDF3D1DD92A5D00BE5F76 /* FSUtils.m in Sources */,
 				F780424D1DD2B796003DE994 /* AppDelegate.m in Sources */,
 				E203EF9B1DD977C200E0F780 /* BrowsePhotosController.m in Sources */,
+				E24D47A01DE14EED00326D0B /* BrowsePhotosVC.m in Sources */,
 				E203EF981DD5669700E0F780 /* FbSharing.m in Sources */,
 				F780424A1DD2B796003DE994 /* main.m in Sources */,
 				F75A35BD1DD58A1C00C3A75C /* YTSearchVC.m in Sources */,

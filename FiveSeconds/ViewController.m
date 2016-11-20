@@ -18,6 +18,7 @@
 #import <AVKit/AVKit.h>
 #import "FSUtils.h"
 #import "BrowsePhotosController.h"
+#import "BrowsePhotosVC.h"
 
 typedef enum {
     RequestedVideoSource_Album,
@@ -182,6 +183,15 @@ typedef enum {
     [self captureVideoAfter:6];
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue
+                sender:(id)sender {
+    BrowsePhotosVC *vc = (BrowsePhotosVC*)[segue destinationViewController];
+    vc.items = [self capturedImages];
+    [self captureVideoAfter:2];
+    [self captureVideoAfter:4];
+    [self captureVideoAfter:6];
+}
+
 -(void)captureVideoAfter:(NSTimeInterval)time_in_seconds {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(time_in_seconds * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         NSLog(@"Taking Photo At: %@", [NSDate date]);
@@ -206,7 +216,7 @@ typedef enum {
                 NSLog(@"Done Taking Photo At: %@", [NSDate date]);
                 [self.capturedImages addObject:image];
                 if (time_in_seconds == 6) {
-                    [self showCapturedImages];
+                    [self performSegueWithIdentifier:@"browse_photo" sender:self];
                 }
             }
             // Continue as appropriate.

@@ -60,6 +60,7 @@
                                     <barButtonItem title="Capture" id="ykc-ab-fbl" userLabel="Capture">
                                         <connections>
                                             <action selector="capturePhotos:" destination="BYZ-38-t0r" id="g6M-Zo-vOE"/>
+                                            <segue destination="e5X-rg-WPX" kind="show" identifier="browse_photo" id="nJn-Vi-PoK"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -147,15 +148,15 @@
             </objects>
             <point key="canvasLocation" x="-500" y="-199.25037481259372"/>
         </scene>
-        <!--View Controller-->
+        <!--Data Source-->
         <scene sceneID="Ib6-gA-IJh">
             <objects>
-                <viewController id="e5X-rg-WPX" sceneMemberID="viewController">
+                <viewController id="e5X-rg-WPX" customClass="BrowsePhotosVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6mQ-Q6-S9s"/>
                         <viewControllerLayoutGuide type="bottom" id="ksj-N2-ISE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jdp-7P-10r" customClass="BrowsePhotosVC">
+                    <view key="view" contentMode="scaleToFill" id="jdp-7P-10r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -167,10 +168,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="e5X-rg-WPX" id="lum-60-MU5"/>
+                                    <outlet property="delegate" destination="e5X-rg-WPX" id="sib-Ts-chc"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="carousel" destination="WXf-7p-mgv" id="Sav-lg-ZDu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yd9-Wf-qrg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
