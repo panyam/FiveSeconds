@@ -17,7 +17,7 @@ typedef enum FSVideoSource {
 
 @class FSVideoPlayer;
 
-@interface FSVideo : NSObject
+@interface FSVideo : NSObject<NSCoding>
 
 @property (nonatomic, readonly) NSDictionary *metadata;
 

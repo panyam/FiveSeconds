@@ -30,6 +30,7 @@
 		F780427F1DD2C1A8003DE994 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F780427E1DD2C1A8003DE994 /* AVKit.framework */; };
 		F78042811DD2C631003DE994 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78042801DD2C631003DE994 /* CoreMedia.framework */; };
 		F78042831DD2C6E7003DE994 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78042821DD2C6E7003DE994 /* CoreGraphics.framework */; };
+		F78132211DE2295B000A5B4F /* FSRecording.m in Sources */ = {isa = PBXBuildFile; fileRef = F78132201DE2295B000A5B4F /* FSRecording.m */; };
 		F7A824D01DD68176001E5C9A /* YTVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A824CE1DD68176001E5C9A /* YTVideoCell.m */; };
 		F7C430A81DE176EF00AECC2E /* FSCapturesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C430A71DE176EF00AECC2E /* FSCapturesVC.m */; };
 		F7C430AC1DE17A0100AECC2E /* FSMyRecordingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C430AA1DE17A0100AECC2E /* FSMyRecordingsVC.m */; };
@@ -99,6 +100,8 @@
 		F780427E1DD2C1A8003DE994 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		F78042801DD2C631003DE994 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		F78042821DD2C6E7003DE994 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F781321F1DE2295B000A5B4F /* FSRecording.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSRecording.h; sourceTree = "<group>"; };
+		F78132201DE2295B000A5B4F /* FSRecording.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSRecording.m; sourceTree = "<group>"; };
 		F7A824CD1DD68176001E5C9A /* YTVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTVideoCell.h; sourceTree = "<group>"; };
 		F7A824CE1DD68176001E5C9A /* YTVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTVideoCell.m; sourceTree = "<group>"; };
 		F7C430A61DE176EF00AECC2E /* FSCapturesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCapturesVC.h; sourceTree = "<group>"; };
@@ -232,6 +235,8 @@
 				F7C430C31DE1939D00AECC2E /* FSVideoControlsVC.xib */,
 				F7C430C61DE19A1600AECC2E /* FSYTVideo.h */,
 				F7C430C71DE19A1600AECC2E /* FSYTVideo.m */,
+				F781321F1DE2295B000A5B4F /* FSRecording.h */,
+				F78132201DE2295B000A5B4F /* FSRecording.m */,
 			);
 			path = FiveSeconds;
 			sourceTree = "<group>";
@@ -465,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F78132211DE2295B000A5B4F /* FSRecording.m in Sources */,
 				F7A824D01DD68176001E5C9A /* YTVideoCell.m in Sources */,
 				F78042501DD2B796003DE994 /* ViewController.m in Sources */,
 				F73CDF3D1DD92A5D00BE5F76 /* FSUtils.m in Sources */,

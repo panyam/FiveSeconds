@@ -12,6 +12,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "FSVideo.h"
+#import "FSRecording.h"
 #import "YTVideoCell.h"
 
 typedef enum {
@@ -30,7 +31,7 @@ typedef enum {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self loadRecordings];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newRecordingCreated:)
                                                  name:NewRecordingCreated object:nil];
 }
@@ -55,8 +56,8 @@ typedef enum {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddRecordingCell" forIndexPath:indexPath];
         return cell;
     } else {
-        NSDictionary *data = [self.recordings objectAtIndex:indexPath.row - 1];
-        FSVideo *video = data[@"video"];
+        FSRecording *recording = [self.recordings objectAtIndex:indexPath.row - 1];
+        FSVideo *video = recording.video;
         YTVideoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecordingCell" forIndexPath:indexPath];
         cell.titleLabel.text = video.title;
         cell.dateLabel.text = video.createdDateString;
@@ -178,7 +179,27 @@ typedef enum {
     if (self.recordings == nil)
         self.recordings = NSMutableArray.array;
     [self.recordings addObject:data.object];
+    [self saveRecordings];
     [self.tableView reloadData];
+}
+
+-(void)saveRecordings {
+    [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:self.recordings]
+                                              forKey:@"FSMyrecordingsVC.recordings"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+-(void)loadRecordings {
+    NSUserDefaults *currentDefaults = [NSUserDefaults standardUserDefaults];
+    NSData *dataRepresentingSavedArray = [currentDefaults objectForKey:@"FSMyrecordingsVC.recordings"];
+    if (dataRepresentingSavedArray != nil)
+    {
+        NSArray *oldSavedArray = [NSKeyedUnarchiver unarchiveObjectWithData:dataRepresentingSavedArray];
+        if (oldSavedArray != nil)
+            self.recordings = [oldSavedArray mutableCopy];
+        else
+            self.recordings = [[NSMutableArray alloc] init];
+    }
 }
 
 @end

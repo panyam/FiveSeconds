@@ -162,4 +162,16 @@
     return [UIColor greenColor];
 }
 
+# pragma mark -
+# pragma mark - Encoder/Decoder methods
+
+- (id)initWithCoder:(NSCoder *)decoder {
+    return [self initWithVideo:[decoder decodeObjectForKey:@"metadata"]];
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    //Encode properties, other class variables, etc
+    [encoder encodeObject:self.metadata forKey:@"metadata"];
+}
+
 @end

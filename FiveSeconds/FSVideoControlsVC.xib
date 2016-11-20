@@ -8,6 +8,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FSVideoControlsVC">
             <connections>
+                <outlet property="playBarButtonItem" destination="tuW-8M-65H" id="bHx-vV-eGa"/>
+                <outlet property="recordBarButtonItem" destination="kHN-PQ-fAY" id="Uoa-Ut-EXI"/>
+                <outlet property="restartBarButtonItem" destination="gCt-Bd-dxi" id="BP4-55-cdU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -11,6 +11,10 @@
 
 @interface FSVideoControlsVC : UIViewController
 
+@property (nonatomic, strong) IBOutlet UIBarButtonItem * restartBarButtonItem;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem * playBarButtonItem;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem * recordBarButtonItem;
+
 @property (nonnull, readonly) NSArray *recordedOffsets;
 @property (nonatomic) BOOL captureOffsetsOnTouch;
 

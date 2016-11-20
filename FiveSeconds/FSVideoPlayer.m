@@ -16,6 +16,7 @@
 #import <ImageIO/ImageIO.h>
 #import <MobileCoreServices/UTCoreTypes.h>
 #import "FSVideoControlsVC.h"
+#import "FSRecording.h"
 
 @interface FSVideoPlayer()
 
@@ -64,9 +65,10 @@
     controlsVC.onClose = ^(id sender, NSError *error) {
         if (self.recordedOffsets.count > 0) {
             // then we have a new touch
-            NSDictionary *recording = @{@"video": self.currentVideo, @"offsets": self.recordedOffsets};
+            FSRecording *recording = [[FSRecording alloc] initWithVideo:self.currentVideo withOffsets:self.recordedOffsets];
             [[NSNotificationCenter defaultCenter] postNotificationName:NewRecordingCreated object:recording];
         }
+        ((FSVideoControlsVC *)sender).playBarButtonItem.title = @"Play";
         [self hide];
     };
     controlsVC.onStartPlaying = ^(id sender, NSError *error) {

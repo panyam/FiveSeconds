@@ -14,6 +14,9 @@
 
 @implementation FSVideoControlsVC
 
+@synthesize restartBarButtonItem;
+@synthesize playBarButtonItem;
+@synthesize recordBarButtonItem;
 @synthesize onClose;
 @synthesize onRestart;
 @synthesize onStartPlaying;
@@ -28,7 +31,9 @@
 }
 
 -(IBAction)closeButtonClicked {
-    if (self.onClose) self.onClose(nil, nil);
+    if (self.onClose) {
+        self.onClose(self, nil);
+    }
 }
 
 -(IBAction)restartButtonClicked:(id)sender {
