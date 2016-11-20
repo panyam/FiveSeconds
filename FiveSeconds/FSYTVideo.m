@@ -32,6 +32,10 @@
     self.ytPlayerView = nil;
 }
 
+-(FSVideoSource)source {
+    return FSVideoSourceYouTube;
+}
+
 -(NSString *)title {
     return self.metadata[@"snippet"][@"title"];
 }

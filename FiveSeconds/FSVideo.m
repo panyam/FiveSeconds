@@ -78,6 +78,10 @@
     self.playerViewController = nil;
 }
 
+-(FSVideoSource)source {
+    return FSVideoSourceAlbum;
+}
+
 -(void)preparePlayer:(FSVideoPlayer *)player {
     [super preparePlayer:player];
     if (!self.playerViewController) {
