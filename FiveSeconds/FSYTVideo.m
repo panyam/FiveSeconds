@@ -44,6 +44,14 @@
     return self.metadata[@"description"];
 }
 
+-(NSString *)createdDateString {
+    return self.metadata[@"snippet"][@"publishedAt"];
+}
+
+-(NSString *)defaultPreviewImageUrl {
+    return self.metadata[@"snippet"][@"thumbnails"][@"default"][@"url"];
+}
+
 -(void)prepareControls {
     self.ytPlayerView = [[YTPlayerView alloc] init];
     self.ytPlayerView.delegate = self;

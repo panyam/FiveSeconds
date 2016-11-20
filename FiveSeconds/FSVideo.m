@@ -29,7 +29,7 @@
 @synthesize videoID;
 @synthesize title;
 @synthesize description;
-@synthesize createdDate;
+@synthesize createdDateString;
 @synthesize metadata;
 
 -(id)initWithVideo:(NSDictionary *)dict {

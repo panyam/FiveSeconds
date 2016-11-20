@@ -27,7 +27,8 @@ typedef enum FSVideoSource {
 @property (nonatomic, copy) NSString *videoID;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *description;
-@property (nonatomic, copy) NSDate *createdDate;
+@property (nonatomic, copy) NSString *createdDateString;
+@property (nonatomic, copy) NSString *defaultPreviewImageUrl;
 @property (nonatomic) NSTimeInterval offset;
 
 
