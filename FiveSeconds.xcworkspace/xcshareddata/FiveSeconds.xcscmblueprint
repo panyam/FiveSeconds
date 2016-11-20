@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7080BD7958ACB3BF3C598CE74DC709EC7ED7FDAB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7080BD7958ACB3BF3C598CE74DC709EC7ED7FDAB" : 9223372036854775807,
+    "D8BD520A913D9D99E3499E94F4097ECE1645FB47" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "9F8EE905-84B6-4452-B2C0-354752F8080E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7080BD7958ACB3BF3C598CE74DC709EC7ED7FDAB" : "FiveSeconds\/",
+    "D8BD520A913D9D99E3499E94F4097ECE1645FB47" : "iCarousel\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "FiveSeconds",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "FiveSeconds.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/panyam\/FiveSeconds.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7080BD7958ACB3BF3C598CE74DC709EC7ED7FDAB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nicklockwood\/iCarousel.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D8BD520A913D9D99E3499E94F4097ECE1645FB47"
+    }
+  ]
+}
