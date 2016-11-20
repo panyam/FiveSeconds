@@ -13,5 +13,8 @@
 #import <Foundation/Foundation.h>
 
 #define VideoSelectedNotification   @"VideoSelected"
+#define NewRecordingCreated   @"NewRecordingCreated"
+
+typedef void (^FSCallback)(id result, NSError *error);
 
 #endif

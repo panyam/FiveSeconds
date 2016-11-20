@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FSVideoControlsVC">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3D-RI-1a9" userLabel="Close">
+                    <color key="backgroundColor" red="1" green="0.30941753039999997" blue="0.28643036259999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="65" id="IYJ-c9-33s"/>
+                        <constraint firstAttribute="height" constant="64" id="eds-tQ-Z03"/>
+                    </constraints>
+                    <state key="normal" image="round_red_close_button_5095.jpg" backgroundImage="round_red_close_button_5095.jpg"/>
+                    <connections>
+                        <action selector="closeButtonClicked" destination="-1" eventType="touchUpInside" id="bPc-g3-0Xe"/>
+                    </connections>
+                </button>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hlu-23-EXZ">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="wa8-JK-ChL"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem title="Restart" id="gCt-Bd-dxi">
+                            <connections>
+                                <action selector="restartButtonClicked:" destination="-1" id="DJz-pB-mrt"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="w9m-oo-zNm"/>
+                        <barButtonItem title="Play" id="tuW-8M-65H">
+                            <connections>
+                                <action selector="playButtonClicked:" destination="-1" id="fWB-vv-ZYb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="2Ic-b0-oaZ"/>
+                        <barButtonItem title="Record" id="kHN-PQ-fAY">
+                            <connections>
+                                <action selector="recordButtonClicked:" destination="-1" id="iKw-PH-dmc"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8J-cF-Wsp" userLabel="Record Touch">
+                    <connections>
+                        <action selector="touchRecorded:" destination="-1" eventType="touchUpInside" id="H9w-M6-GPH"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.56707019981593365" green="0.96731674141130808" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="hlu-23-EXZ" firstAttribute="leading" secondItem="R8J-cF-Wsp" secondAttribute="leading" id="2Wk-OZ-XIO"/>
+                <constraint firstItem="R8J-cF-Wsp" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="5k1-QB-HZM"/>
+                <constraint firstItem="R8J-cF-Wsp" firstAttribute="top" secondItem="G3D-RI-1a9" secondAttribute="bottom" constant="8" id="Cuc-SV-1oP"/>
+                <constraint firstItem="hlu-23-EXZ" firstAttribute="trailing" secondItem="R8J-cF-Wsp" secondAttribute="trailing" id="DV9-yz-4Hu"/>
+                <constraint firstItem="G3D-RI-1a9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="FsC-kq-fny"/>
+                <constraint firstAttribute="trailing" secondItem="R8J-cF-Wsp" secondAttribute="trailing" id="eeg-Dr-ewZ"/>
+                <constraint firstAttribute="bottom" secondItem="hlu-23-EXZ" secondAttribute="bottom" id="hCI-t4-YyT"/>
+                <constraint firstItem="hlu-23-EXZ" firstAttribute="top" secondItem="R8J-cF-Wsp" secondAttribute="bottom" id="hND-rG-UvV"/>
+                <constraint firstAttribute="trailing" secondItem="G3D-RI-1a9" secondAttribute="trailing" constant="16" id="hfp-ly-s2K"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="121.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="round_red_close_button_5095.jpg" width="254" height="252"/>
+    </resources>
+</document>

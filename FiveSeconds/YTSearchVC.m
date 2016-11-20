@@ -10,7 +10,8 @@
 #import "YTVideoCell.h"
 #import <AFNetworking/AFNetworking.h>
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "FSUtils.h"
+#import "FSVideoPlayer.h"
+#import "FSYTVideo.h"
 
 @interface YTSearchVC ()
 
@@ -108,7 +109,7 @@
     NSDictionary *thumbnails = videoData[@"thumbnails"];
     NSDictionary *defaultPreviewImage = thumbnails[@"default"];
 
-    cell.titleLabel.text = [NSString stringWithFormat:title];
+    cell.titleLabel.text = title;
 //    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
 //    [formatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
 //    [formatter dateFromString:dateString];
@@ -122,7 +123,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *videoData = [self.videos objectAtIndex:indexPath.row];
-    [[NSNotificationCenter defaultCenter] postNotificationName:VideoSelectedNotification object:videoData];
+    FSVideoPlayer.sharedInstance.currentVideo = [[FSYTVideo alloc] initWithVideo:videoData];
+    [FSVideoPlayer.sharedInstance show];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:VideoSelectedNotification object:videoData];
 }
 
 #pragma mark - Search bar delegate
