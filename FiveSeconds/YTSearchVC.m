@@ -43,8 +43,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    self.searchTerm = [[NSUserDefaults standardUserDefaults] valueForKey:@"YTSearchVC.searchTerm"];
     if (self.searchTerm == nil) self.searchTerm = @"";
+    self.searchBar.text = self.searchTerm;
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     self.manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
@@ -61,6 +63,8 @@
 }
 
 -(void)reloadData {
+    [[NSUserDefaults standardUserDefaults] setValue:self.searchTerm forKey:@"YTSearchVC.searchTerm"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     NSString *urlTemplate = @"https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyAAJ9pGNzoAGAhvHTSJA2YjIgO4EAs_W5M&maxResults=50&q=";
     NSString *escapedQuery = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
                                                                                                    NULL,
@@ -144,13 +148,5 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)sb {
     [sb endEditing:YES];
 }
-
-//- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText;   // called when text changes (including clear)
-//- (BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text NS_AVAILABLE_IOS(3_0); // called before text changes
-//
-//- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar __TVOS_PROHIBITED;   // called when cancel button pressed
-//- (void)searchBarResultsListButtonClicked:(UISearchBar *)searchBar NS_AVAILABLE_IOS(3_2) __TVOS_PROHIBITED; // called when search results button pressed
-//
-//- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope NS_AVAILABLE_IOS(3_0);
 
 @end
