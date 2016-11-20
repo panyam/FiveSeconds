@@ -357,6 +357,7 @@
 					F78042441DD2B796003DE994 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = GYYZ2J5D87;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					F780425D1DD2B796003DE994 = {
@@ -648,6 +649,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackery.FiveSeconds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -661,6 +663,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackery.FiveSeconds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

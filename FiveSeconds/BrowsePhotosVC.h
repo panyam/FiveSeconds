@@ -12,7 +12,10 @@
 @interface BrowsePhotosVC : UIViewController <iCarouselDataSource, iCarouselDelegate>
 
 @property (nonatomic, strong) IBOutlet iCarousel *carousel;
-
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *share;
 @property (nonatomic, strong) NSMutableArray<UIImage*> *items;
+
+-(IBAction)shareOnFacebook:(id)sender;
+
 
 @end
