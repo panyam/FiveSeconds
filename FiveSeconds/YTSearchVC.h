@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <SPiOSUtils/SPMobileUtils.h>
 
+@class YTSearchVC;
+@class FSVideo;
+
+typedef void (^YTVideoSelectedCallback)(YTSearchVC *vc, FSVideo *video);
+
 @interface YTSearchVC : UITableViewController<UISearchBarDelegate>
 
 @property (nonatomic,strong) IBOutlet UISearchBar *searchBar;
@@ -16,5 +21,6 @@
 @property BOOL searchControllerWasActive;
 @property BOOL searchControllerSearchFieldWasFirstResponder;
 @property (nonatomic, copy) NSString *searchTerm;
+@property (nonatomic, copy) YTVideoSelectedCallback videoSelectedCallback;
 
 @end

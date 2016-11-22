@@ -7,6 +7,7 @@
 //
 
 #import "FSVideoPlayerControls.h"
+#import "FSVideoPlayer.h"
 
 @interface FSOffsetsRecorderControlsVC ()
 
@@ -18,8 +19,10 @@
 @synthesize playBarButtonItem;
 @synthesize recordBarButtonItem;
 @synthesize callback;
+@synthesize recordedOffsets;
 
 @synthesize captureOffsetsOnTouch;
+@synthesize player;
 
 -(void)viewDidLoad {
     [super viewDidLoad];    
@@ -70,7 +73,11 @@
 
 -(IBAction)touchRecorded:(id)sender {
     if (self.captureOffsetsOnTouch && self.callback) {
-        self.callback(self, @"recorded", nil);
+        NSNumber *offset = [NSNumber numberWithDouble:self.player.currentVideo.offset];
+        if (!self.recordedOffsets)
+            self.recordedOffsets = [NSMutableArray array];
+        [self.recordedOffsets addObject:offset];
+        self.callback(self, @"recorded", offset);
     }
 }
 

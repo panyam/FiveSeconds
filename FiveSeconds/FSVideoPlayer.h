@@ -15,7 +15,7 @@
 @interface FSVideoPlayer : NSObject
 
 @property (nonatomic) FSVideo *currentVideo;
-@property (nonatomic, strong) id<FSVideoPlayerControls> controls;
+@property (nonatomic, strong) NSObject<FSVideoPlayerControls> *controls;
 
 +(FSVideoPlayer *)sharedInstance;
 

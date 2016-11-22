@@ -32,6 +32,7 @@
 @synthesize playerWindow;
 @synthesize controlsWindow;
 @synthesize recordedOffsets;
+@synthesize controls;
 
 +(FSVideoPlayer *)sharedInstance
 {
@@ -59,12 +60,25 @@
 -(void)initializeWindows {
     CGRect mainBounds = [[UIScreen mainScreen] bounds];
     self.playerWindow = [[UIWindow alloc] initWithFrame:mainBounds];
-    self.controlsWindow = [[UIWindow alloc] initWithFrame:mainBounds];
-    FSOffsetsRecorderControlsVC *controlsVC = [[FSOffsetsRecorderControlsVC alloc] initWithNibName:nil bundle:nil];
-    self.controlsWindow.rootViewController = controlsVC;
-    controlsVC.callback = ^(id<FSVideoPlayerControls> controls, NSString *action, id actionData) {
-        return [self handleAction:action forControls:controls withData:actionData];
-    };
+}
+
+-(void)setControls:(NSObject<FSVideoPlayerControls> *)newControls {
+    [self.controlsWindow resignKeyWindow];
+    [self.controlsWindow removeFromSuperview];
+    [self.controlsWindow setHidden:YES];
+    self.controlsWindow = nil;
+    [controls setPlayer:nil];
+    
+    // now set the controls object
+    controls = newControls;
+    controls.player = self;
+    
+    // Now create controlsWindow if it exists
+    if ([self.controls isKindOfClass:[UIViewController class]]) {
+        CGRect mainBounds = [[UIScreen mainScreen] bounds];
+        self.controlsWindow = [[UIWindow alloc] initWithFrame:mainBounds];
+        self.controlsWindow.rootViewController = (UIViewController *)self.controls;
+    }
 }
 
 -(BOOL)isHidden {

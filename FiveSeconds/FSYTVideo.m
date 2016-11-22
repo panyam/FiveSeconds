@@ -102,12 +102,6 @@
  * @param playerView The YTPlayerView instance that has become ready.
  */
 - (void)playerViewDidBecomeReady:(YTPlayerView *)playerView {
-    NSLog(@"Here..............");
-    UIWindow *playerWindow = self.currentPlayer.playerWindow;
-    UIWindow *controlsWindow = self.currentPlayer.controlsWindow;
-    UIView *playerView2  = playerWindow.rootViewController.view;
-    UIView *controlsView = controlsWindow.rootViewController.view;
-//    [playerView playVideo];
 }
 
 /**
@@ -146,11 +140,6 @@
  * @param playTime float containing curretn playback time.
  */
 - (void)playerView:(YTPlayerView *)playerView didPlayTime:(float)playTime {
-//    NSLog(@"Player time: %f", playTime);
-    UIWindow *playerWindow = self.currentPlayer.playerWindow;
-    UIWindow *controlsWindow = self.currentPlayer.controlsWindow;
-    UIView *playerView2  = playerWindow.rootViewController.view;
-    UIView *controlsView = controlsWindow.rootViewController.view;
 }
 
 /**

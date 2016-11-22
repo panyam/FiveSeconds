@@ -14,6 +14,10 @@
 #import "FSVideo.h"
 #import "FSRecording.h"
 #import "YTVideoCell.h"
+#import "YTVideosVC.h"
+#import "YTSearchVC.h"
+#import "FSVideoPlayer.h"
+#import "FSVideoPlayerControls.h"
 
 typedef enum {
     RequestedVideoSource_Album,
@@ -158,6 +162,19 @@ typedef enum {
     [self performSegueWithIdentifier:@"youtube_vc" sender:self];
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    YTVideosVC *vc = (YTVideosVC *)[segue destinationViewController];
+    YTSearchVC *searchVC = [vc.viewControllers objectAtIndex:0];
+    searchVC.videoSelectedCallback = ^(YTSearchVC *vc, FSVideo *video) {
+        FSVideoPlayer.sharedInstance.currentVideo = video;
+        FSVideoPlayer.sharedInstance.controls = [[FSOffsetsRecorderControlsVC alloc] init];
+        FSVideoPlayer.sharedInstance.controls.callback = ^(NSObject<FSVideoPlayerControls> *sender, NSString *action, NSObject *actionData) {
+            return [self handleAction:action forControls:sender withData:actionData];
+        };
+        [FSVideoPlayer.sharedInstance show];
+    };
+}
+
 /**
  * Called when a video has been selected to start recording.
  */
@@ -191,6 +208,53 @@ typedef enum {
 
 # pragma mark - Photo Capturing
 -(void)capturePhotos {
+}
+
+
+#pragma mark -
+#pragma mark - Video Player controls
+
+// TODO - Make YTSearch have a "videoSelected" delegate and put this stuff in there
+// instead of having to do recording stuff here!
+-(BOOL)handleAction:(NSString *)action
+        forControls:(NSObject<FSVideoPlayerControls> *)sender
+           withData:(id)actionData {
+    FSOffsetsRecorderControlsVC *offsetsRecorderVC = (FSOffsetsRecorderControlsVC *)sender;
+    FSVideoPlayer *player = FSVideoPlayer.sharedInstance;
+    
+    if ([action isEqualToString:@"close"]) {
+        if (offsetsRecorderVC.recordedOffsets.count > 0) {
+            // then we have a new touch
+            FSRecording *recording = [[FSRecording alloc] initWithVideo:player.currentVideo
+                                                            withOffsets:offsetsRecorderVC.recordedOffsets];
+            [[NSNotificationCenter defaultCenter] postNotificationName:NewRecordingCreated object:recording];
+        }
+        offsetsRecorderVC.playBarButtonItem.title = @"Play";
+        [FSVideoPlayer.sharedInstance hide];
+        return YES;
+    }
+    else if ([action isEqualToString:@"play"]) {
+        UIBarButtonItem *item = actionData;
+        [player.currentVideo playFromOffset:-1];
+        item.title = @"Pause";
+        item.enabled = YES;
+        return YES;
+    }
+    else if ([action isEqualToString:@"pause"]) {
+        UIBarButtonItem *item = actionData;
+        [player.currentVideo stop];
+        item.title = @"Play";
+        item.enabled = YES;
+        return YES;
+    }
+    else if ([action isEqualToString:@"restart"]) {
+        [player.currentVideo seekOffset:0 onCompletion:^(id result, NSError *error) {
+            UIBarButtonItem *item = actionData;
+            item.enabled = YES;
+        }];
+        return YES;
+    }
+    return NO;
 }
 
 @end
