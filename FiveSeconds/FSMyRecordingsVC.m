@@ -201,7 +201,6 @@ typedef enum {
                forControls:(NSObject<FSVideoPlayerControls> *)sender
                   withData:(id)actionData {
     FSMomentsCaptureControlsVC *captureControlsVC = (FSMomentsCaptureControlsVC *)sender;
-    FSVideoPlayer *player = FSVideoPlayer.sharedInstance;
     
     if ([action isEqualToString:@"close"]) {
         [[NSNotificationCenter defaultCenter] postNotificationName:NewSessionCreated object:captureControlsVC.currentSession];
