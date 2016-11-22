@@ -191,7 +191,6 @@ typedef enum {
 
 # pragma mark - Photo Capturing
 -(void)capturePhotos {
-    
 }
 
 @end

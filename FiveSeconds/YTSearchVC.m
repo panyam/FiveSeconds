@@ -11,6 +11,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "FSVideoPlayer.h"
+#import "FSVideoPlayerControls.h"
 #import "FSYTVideo.h"
 
 @interface YTSearchVC ()
@@ -128,6 +129,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *videoData = [self.videos objectAtIndex:indexPath.row];
     FSVideoPlayer.sharedInstance.currentVideo = [[FSYTVideo alloc] initWithVideo:videoData];
+    FSVideoPlayer.sharedInstance.controls = [[FSOffsetsRecorderControlsVC alloc] init];
     [FSVideoPlayer.sharedInstance show];
 //    [[NSNotificationCenter defaultCenter] postNotificationName:VideoSelectedNotification object:videoData];
 }
@@ -147,6 +149,53 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)sb {
     [sb endEditing:YES];
+}
+
+#pragma mark -
+#pragma mark - Video Player controls
+
+-(BOOL)handleAction:(NSString *)action
+        forControls:(id<FSVideoPlayerControls>)sender
+           withData:(id)actionData {
+    if ([action isEqualToString:@"close"]) {
+        if (self.recordedOffsets.count > 0) {
+            // then we have a new touch
+            FSRecording *recording = [[FSRecording alloc] initWithVideo:self.currentVideo withOffsets:self.recordedOffsets];
+            [[NSNotificationCenter defaultCenter] postNotificationName:NewRecordingCreated object:recording];
+        }
+        ((FSOffsetsRecorderControlsVC *)sender).playBarButtonItem.title = @"Play";
+        [self hide];
+        return YES;
+    }
+    else if ([action isEqualToString:@"play"]) {
+        UIBarButtonItem *item = actionData;
+        [[self currentVideo] playFromOffset:-1];
+        item.title = @"Pause";
+        item.enabled = YES;
+        return YES;
+    }
+    else if ([action isEqualToString:@"pause"]) {
+        UIBarButtonItem *item = actionData;
+        [[self currentVideo] stop];
+        item.title = @"Play";
+        item.enabled = YES;
+        return YES;
+    }
+    else if ([action isEqualToString:@"restart"]) {
+        [self.currentVideo seekOffset:0 onCompletion:^(id result, NSError *error) {
+            UIBarButtonItem *item = actionData;
+            item.enabled = YES;
+        }];
+        return YES;
+    }
+    else if ([action isEqualToString:@"recorded"]) {
+        if (self.recordedOffsets == nil) {
+            self.recordedOffsets = [NSMutableArray array];
+        }
+        [self.recordedOffsets addObject:[NSNumber numberWithDouble:self.currentVideo.offset]];
+        return YES;
+    }
+    return NO;
 }
 
 @end

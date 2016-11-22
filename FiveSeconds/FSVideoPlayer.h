@@ -10,14 +10,16 @@
 #import <UIKit/UIKit.h>
 #import "FSVideo.h"
 
+@protocol FSVideoPlayerControls;
+
 @interface FSVideoPlayer : NSObject
 
 @property (nonatomic) FSVideo *currentVideo;
+@property (nonatomic, strong) id<FSVideoPlayerControls> controls;
 
 +(FSVideoPlayer *)sharedInstance;
 
 -(UIWindow *)playerWindow;
--(UIWindow *)controlsWindow;
 -(void)show;
 -(void)hide;
 

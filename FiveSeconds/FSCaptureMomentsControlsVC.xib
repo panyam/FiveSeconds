@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FSVideoControlsVC">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FSCaptureMomentsControlsVC">
             <connections>
                 <outlet property="playBarButtonItem" destination="tuW-8M-65H" id="bHx-vV-eGa"/>
                 <outlet property="recordBarButtonItem" destination="kHN-PQ-fAY" id="Uoa-Ut-EXI"/>

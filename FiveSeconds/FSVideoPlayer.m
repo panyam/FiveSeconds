@@ -15,7 +15,7 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import <ImageIO/ImageIO.h>
 #import <MobileCoreServices/UTCoreTypes.h>
-#import "FSVideoControlsVC.h"
+#import "FSVideoPlayerControls.h"
 #import "FSRecording.h"
 
 @interface FSVideoPlayer()
@@ -60,40 +60,10 @@
     CGRect mainBounds = [[UIScreen mainScreen] bounds];
     self.playerWindow = [[UIWindow alloc] initWithFrame:mainBounds];
     self.controlsWindow = [[UIWindow alloc] initWithFrame:mainBounds];
-    FSVideoControlsVC *controlsVC = [[FSVideoControlsVC alloc] initWithNibName:nil bundle:nil];
+    FSOffsetsRecorderControlsVC *controlsVC = [[FSOffsetsRecorderControlsVC alloc] initWithNibName:nil bundle:nil];
     self.controlsWindow.rootViewController = controlsVC;
-    controlsVC.onClose = ^(id sender, NSError *error) {
-        if (self.recordedOffsets.count > 0) {
-            // then we have a new touch
-            FSRecording *recording = [[FSRecording alloc] initWithVideo:self.currentVideo withOffsets:self.recordedOffsets];
-            [[NSNotificationCenter defaultCenter] postNotificationName:NewRecordingCreated object:recording];
-        }
-        ((FSVideoControlsVC *)sender).playBarButtonItem.title = @"Play";
-        [self hide];
-    };
-    controlsVC.onStartPlaying = ^(id sender, NSError *error) {
-        UIBarButtonItem *item = sender;
-        [[self currentVideo] playFromOffset:-1];
-        item.title = @"Pause";
-        item.enabled = YES;
-    };
-    controlsVC.onPausePlaying = ^(id sender, NSError *error) {
-        UIBarButtonItem *item = sender;
-        [[self currentVideo] stop];
-        item.title = @"Play";
-        item.enabled = YES;
-    };
-    controlsVC.onRestart = ^(id sender, NSError *error) {
-        [self.currentVideo seekOffset:0 onCompletion:^(id result, NSError *error) {
-            UIBarButtonItem *item = sender;
-            item.enabled = YES;
-        }];
-    };
-    controlsVC.onTouchRecorded = ^(id sender, NSError *error) {
-        if (self.recordedOffsets == nil) {
-            self.recordedOffsets = [NSMutableArray array];
-        }
-        [self.recordedOffsets addObject:[NSNumber numberWithDouble:self.currentVideo.offset]];
+    controlsVC.callback = ^(id<FSVideoPlayerControls> controls, NSString *action, id actionData) {
+        return [self handleAction:action forControls:controls withData:actionData];
     };
 }
 
