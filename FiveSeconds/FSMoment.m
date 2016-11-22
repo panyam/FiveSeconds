@@ -26,13 +26,30 @@
     return self;
 }
 
-- (void)encodeWithCoder:(NSCoder *)aCoder {
-    
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    //Encode properties, other class variables, etc
+    [encoder encodeObject:self.recording forKey:@"recording"];
+    [encoder encodeObject:self.images forKey:@"images"];
 }
 
 - (nullable instancetype)initWithCoder:(NSCoder *)decoder {
     return [self initWithRecording:[decoder decodeObjectForKey:@"recording"]
                    withImageUrls:[decoder decodeObjectForKey:@"images"]];
+}
+
+- (void)saveCustomObject:(FSMoment *)object key:(NSString *)key {
+    NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:object];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:encodedObject forKey:key];
+    [defaults synchronize];
+    
+}
+
+- (FSMoment *)loadCustomObjectWithKey:(NSString *)key {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *encodedObject = [defaults objectForKey:key];
+    FSMoment *object = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+    return object;
 }
 
 @end
