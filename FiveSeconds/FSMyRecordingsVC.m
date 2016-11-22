@@ -43,10 +43,6 @@ typedef enum {
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1 + self.recordings.count;
 }
@@ -83,18 +79,9 @@ typedef enum {
     if (indexPath.row == 0) {
         [self loadVideo];
     } else {
+        [self capturePhotos];
     }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 -(IBAction)loadVideo {
     UIAlertController * view=   [UIAlertController
@@ -178,7 +165,7 @@ typedef enum {
     NSLog(@"Called when a new recording has been created.");
     if (self.recordings == nil)
         self.recordings = NSMutableArray.array;
-    [self.recordings addObject:data.object];
+    [self.recordings insertObject:data.object atIndex:0];
     [self saveRecordings];
     [self.tableView reloadData];
 }

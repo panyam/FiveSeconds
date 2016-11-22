@@ -31,6 +31,7 @@
 		F78042811DD2C631003DE994 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78042801DD2C631003DE994 /* CoreMedia.framework */; };
 		F78042831DD2C6E7003DE994 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78042821DD2C6E7003DE994 /* CoreGraphics.framework */; };
 		F78132211DE2295B000A5B4F /* FSRecording.m in Sources */ = {isa = PBXBuildFile; fileRef = F78132201DE2295B000A5B4F /* FSRecording.m */; };
+		F7A44D2F1DE3DD3B00F626AA /* FSCapturedMomentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A44D2E1DE3DD3B00F626AA /* FSCapturedMomentsCell.m */; };
 		F7A824D01DD68176001E5C9A /* YTVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A824CE1DD68176001E5C9A /* YTVideoCell.m */; };
 		F7C430A81DE176EF00AECC2E /* FSCapturesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C430A71DE176EF00AECC2E /* FSCapturesVC.m */; };
 		F7C430AC1DE17A0100AECC2E /* FSMyRecordingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C430AA1DE17A0100AECC2E /* FSMyRecordingsVC.m */; };
@@ -102,6 +103,8 @@
 		F78042821DD2C6E7003DE994 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F781321F1DE2295B000A5B4F /* FSRecording.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSRecording.h; sourceTree = "<group>"; };
 		F78132201DE2295B000A5B4F /* FSRecording.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSRecording.m; sourceTree = "<group>"; };
+		F7A44D2D1DE3DD3B00F626AA /* FSCapturedMomentsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCapturedMomentsCell.h; sourceTree = "<group>"; };
+		F7A44D2E1DE3DD3B00F626AA /* FSCapturedMomentsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCapturedMomentsCell.m; sourceTree = "<group>"; };
 		F7A824CD1DD68176001E5C9A /* YTVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTVideoCell.h; sourceTree = "<group>"; };
 		F7A824CE1DD68176001E5C9A /* YTVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTVideoCell.m; sourceTree = "<group>"; };
 		F7C430A61DE176EF00AECC2E /* FSCapturesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCapturesVC.h; sourceTree = "<group>"; };
@@ -237,6 +240,8 @@
 				F7C430C71DE19A1600AECC2E /* FSYTVideo.m */,
 				F781321F1DE2295B000A5B4F /* FSRecording.h */,
 				F78132201DE2295B000A5B4F /* FSRecording.m */,
+				F7A44D2D1DE3DD3B00F626AA /* FSCapturedMomentsCell.h */,
+				F7A44D2E1DE3DD3B00F626AA /* FSCapturedMomentsCell.m */,
 			);
 			path = FiveSeconds;
 			sourceTree = "<group>";
@@ -351,7 +356,7 @@
 				TargetAttributes = {
 					F78042441DD2B796003DE994 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = YK36MNU24P;
+						DevelopmentTeam = GYYZ2J5D87;
 						ProvisioningStyle = Automatic;
 					};
 					F780425D1DD2B796003DE994 = {
@@ -483,6 +488,7 @@
 				E203EF981DD5669700E0F780 /* FbSharing.m in Sources */,
 				F7C430A81DE176EF00AECC2E /* FSCapturesVC.m in Sources */,
 				F7C430C41DE1939D00AECC2E /* FSVideoControlsVC.m in Sources */,
+				F7A44D2F1DE3DD3B00F626AA /* FSCapturedMomentsCell.m in Sources */,
 				F780424A1DD2B796003DE994 /* main.m in Sources */,
 				F75A35BD1DD58A1C00C3A75C /* YTSearchVC.m in Sources */,
 				F73CDF401DD92BC300BE5F76 /* YTVideosVC.m in Sources */,
@@ -637,7 +643,7 @@
 			baseConfigurationReference = 06D0F5568D24815FA967E280 /* Pods-FiveSeconds.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YK36MNU24P;
+				DEVELOPMENT_TEAM = GYYZ2J5D87;
 				INFOPLIST_FILE = FiveSeconds/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackery.FiveSeconds;
@@ -650,7 +656,7 @@
 			baseConfigurationReference = 014B811B73F1B4B0839630F5 /* Pods-FiveSeconds.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YK36MNU24P;
+				DEVELOPMENT_TEAM = GYYZ2J5D87;
 				INFOPLIST_FILE = FiveSeconds/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackery.FiveSeconds;
