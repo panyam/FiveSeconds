@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FSVideoPlayerControls.h"
 #import "FSRecording.h"
-#import "FSCapturedMoments.h"
+#import "FSCaptureSession.h"
 
 @interface FSMomentsCaptureControlsVC : UIViewController<FSVideoPlayerControls>
 
@@ -23,6 +23,6 @@
 -(IBAction)captureButtonClicked:(_Nonnull id)sender;
 
 -(NSUInteger)numCaptured;
--(FSCapturedMoments *)currentMoments;
+-(FSCaptureSession *)currentSession;
 
 @end

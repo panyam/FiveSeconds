@@ -1,5 +1,5 @@
 //
-//  FSCapturedMomentsVC.h
+//  FSCaptureSessionsVC.h
 //  FiveSeconds
 //
 //  Created by Sriram Panyam on 11/19/16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FSCapturedMomentsVC : UITableViewController
+@interface FSCaptureSessionsVC : UITableViewController
 
 @end

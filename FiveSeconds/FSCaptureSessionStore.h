@@ -7,17 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FSCapturedMoments.h"
+#import "FSCaptureSession.h"
 
 @interface FSCaptureSessionStore : NSObject
 
 +(FSCaptureSessionStore *)sharedInstance;
--(FSCapturedMoments *)newMomentsForRecording:(FSRecording *)recording;
+-(FSCaptureSession *)newSessionForRecording:(FSRecording *)recording;
 -(NSUInteger)count;
--(FSCapturedMoments *)sessionAtIndex:(NSInteger)index;
--(FSCapturedMoments *)sessionById:(NSString *)sessionId;
+-(FSCaptureSession *)sessionAtIndex:(NSInteger)index;
+-(FSCaptureSession *)sessionById:(NSString *)sessionId;
 -(void)load;
 -(void)save;
--(void)add:(FSCapturedMoments *)session;
+-(void)add:(FSCaptureSession *)session;
 
 @end

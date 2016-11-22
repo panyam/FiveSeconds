@@ -1,5 +1,5 @@
 //
-//  CapturedMomentsCell.h
+//  CaptureSessionCell.h
 //  FiveSeconds
 //
 //  Created by Akshat Bhatia on 11/21/16.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CapturedMomentsCell : UITableViewCell
+@interface CaptureSessionCell : UITableViewCell
 
 @property (nonatomic, strong) IBOutlet UIImageView *previewImageView;
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;

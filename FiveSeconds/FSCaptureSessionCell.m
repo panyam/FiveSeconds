@@ -1,19 +1,18 @@
 //
-//  CapturedMomentsCell.m
+//  FSCaptureSessionCell.m
 //  FiveSeconds
 //
-//  Created by Akshat Bhatia on 11/21/16.
+//  Created by Sriram Panyam on 11/21/16.
 //  Copyright © 2016 Hackery Inc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "CapturedMomentsCell.h"
+#import "FSCaptureSessionCell.h"
 
-@implementation CapturedMomentsCell
+@implementation FSCaptureSessionCell
 
 @synthesize previewImageView;
-@synthesize titleLabel;
-@synthesize photos;
+@synthesize thumbnailsView;
+@synthesize dateTakenLabel;
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -22,7 +21,8 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    
+
     // Configure the view for the selected state
 }
+
 @end

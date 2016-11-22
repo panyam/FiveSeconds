@@ -1,5 +1,5 @@
 //
-//  FSCapturedMomentsCell.h
+//  FSCaptureSessionCell.h
 //  FiveSeconds
 //
 //  Created by Sriram Panyam on 11/21/16.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FSCapturedMomentsCell : UITableViewCell
+@interface FSCaptureSessionCell : UITableViewCell
 
 @property (nonatomic, strong) IBOutlet UIImageView *previewImageView;
 @property (nonatomic, strong) IBOutlet UICollectionView *thumbnailsView;

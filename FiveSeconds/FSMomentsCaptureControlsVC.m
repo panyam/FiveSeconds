@@ -26,7 +26,7 @@
 @property (nonatomic, copy) NSString *imagesDir;
 @property (nonatomic) NSInteger offsetIndex;
 @property (nonatomic, strong) NSMutableArray *imageURLs;
-@property (nonatomic, strong) FSCapturedMoments *currentMoments;
+@property (nonatomic, strong) FSCaptureSession *currentSession;
 
 @end
 
@@ -143,7 +143,7 @@
     NSAssert(error == nil, @"Error creating images directory");
     
     // Now we are safe to start taking snapshots
-    self.currentMoments = [FSCaptureSessionStore.sharedInstance newMomentsForRecording:self.recording];
+    self.currentSession = [FSCaptureSessionStore.sharedInstance newMomentsForRecording:self.recording];
     self.offsetIndex = 0;
     [self trackNextOffset];
 }
@@ -201,12 +201,10 @@
             CFDictionaryRef exifAttachments = CMGetAttachment(imageSampleBuffer, kCGImagePropertyExifDictionary, NULL);
             if (exifAttachments) {
                 // Do something with the attachments.
-                NSString *filepath = [self.currentMoments pathForIndex:index];
+                NSString *filepath = [self.currentSession pathForIndex:index];
                 NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageSampleBuffer];
                 [imageData writeToFile:filepath atomically:NO];
-                [self.currentMoments addImage];
-//                UIImage *image = [[UIImage alloc] initWithData:imageData];
-//                UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+                [self.currentSession addImage];
                 NSLog(@"Saving photo %ld to file: %@", index, filepath);
                 [self.imageURLs addObject:[NSURL fileURLWithPath:filepath]];
                 if (completion) {

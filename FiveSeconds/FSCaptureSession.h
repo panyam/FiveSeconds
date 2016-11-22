@@ -1,5 +1,5 @@
 //
-//  FSCapturedMoments.h
+//  FSCaptureSession.h
 //  FiveSeconds
 //
 //  Created by Akshat Bhatia on 11/21/16.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "FSRecording.h"
 
-@interface FSCapturedMoments : NSObject<NSCoding>
+@interface FSCaptureSession : NSObject<NSCoding>
 
 -(id)initWithRecording:(FSRecording *)_recording;
 

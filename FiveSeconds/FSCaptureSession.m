@@ -1,22 +1,22 @@
 //
-//  FSCapturedMoments.m
+//  FSCaptureSession.m
 //  FiveSeconds
 //
 //  Created by Akshat Bhatia on 11/21/16.
 //  Copyright © 2016 Hackery Inc. All rights reserved.
 //
 
-#import "FSCapturedMoments.h"
+#import "FSCaptureSession.h"
 #import "FSRecordingStore.h"
 
-@interface FSCapturedMoments()
+@interface FSCaptureSession()
 
 @property (nonatomic, strong) FSRecording *recording;
 @property (nonatomic) NSUInteger imageCount;
 
 @end
 
-@implementation FSCapturedMoments
+@implementation FSCaptureSession
 
 @synthesize imageCount;
 @synthesize recording;
@@ -55,7 +55,7 @@
     return self;
 }
 
-- (void)saveCustomObject:(FSCapturedMoments *)object key:(NSString *)key {
+- (void)saveCustomObject:(FSCaptureSession *)object key:(NSString *)key {
     NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:object];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:encodedObject forKey:key];
@@ -63,10 +63,10 @@
     
 }
 
-- (FSCapturedMoments *)loadCustomObjectWithKey:(NSString *)key {
+- (FSCaptureSession *)loadCustomObjectWithKey:(NSString *)key {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSData *encodedObject = [defaults objectForKey:key];
-    FSCapturedMoments *object = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+    FSCaptureSession *object = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
     return object;
 }
 

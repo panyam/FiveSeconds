@@ -123,13 +123,13 @@
         <!--Moments-->
         <scene sceneID="Gbz-RY-1Aa">
             <objects>
-                <tableViewController title="Moments" id="1TW-hL-fdl" customClass="FSCapturedMomentsVC" sceneMemberID="viewController">
+                <tableViewController title="Moments" id="1TW-hL-fdl" customClass="FSCaptureSessionsVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jHa-IJ-Znp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="IGB-jB-4OL" customClass="FSCapturedMomentsCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="IGB-jB-4OL" customClass="FSCaptureSessionCell">
                                 <rect key="frame" x="0.0" y="92" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IGB-jB-4OL" id="nnV-o7-Bbu">

@@ -1,20 +1,20 @@
 //
-//  FSCapturedMomentsVC.m
+//  FSCaptureSessionsVC.m
 //  FiveSeconds
 //
 //  Created by Sriram Panyam on 11/19/16.
 //  Copyright © 2016 Hackery Inc. All rights reserved.
 //
 
-#import "FSCapturedMomentsVC.h"
+#import "FSCaptureSessionsVC.h"
 #import "FSUtils.h"
 #import "FSCaptureSessionStore.h"
 
-@interface FSCapturedMomentsVC ()
+@interface FSCaptureSessionsVC ()
 
 @end
 
-@implementation FSCapturedMomentsVC
+@implementation FSCaptureSessionsVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -50,7 +50,7 @@
 
 -(void)newSessionCreated:(NSNotification *)data {
     NSLog(@"Called when a new session has been created.");
-    FSCapturedMoments *moments = data.object;
+    FSCaptureSession *session = data.object;
     if (moments.imageCount > 0) {
         // then save it!
         [FSCaptureSessionStore.sharedInstance add:moments];
