@@ -7,34 +7,52 @@
 //
 
 #import "FSCapturedMoments.h"
-#import "FSRecording.h"
+#import "FSRecordingStore.h"
+
+@interface FSCapturedMoments()
+
+@property (nonatomic, strong) FSRecording *recording;
+@property (nonatomic) NSUInteger imageCount;
+
+@end
 
 @implementation FSCapturedMoments
 
+@synthesize imageCount;
 @synthesize recording;
-@synthesize images;
-
+@synthesize sessionId;
 
 -(id)initWithRecording:(FSRecording *)_recording
-         withImageUrls:(NSArray<NSURL *> *)_images
 {
     self = [super init];
     if (self) {
-        self.images = _images;
         self.recording = _recording;
+        sessionId = [NSString stringWithFormat:@"%lld",
+                        (unsigned long long)([[NSDate date] timeIntervalSince1970] * 1000)];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
     //Encode properties, other class variables, etc
-    [encoder encodeObject:self.recording forKey:@"recording"];
-    [encoder encodeObject:self.images forKey:@"images"];
+    [encoder encodeObject:self.recording.recordingId forKey:@"recordingId"];
+    [encoder encodeObject:self.sessionId forKey:@"sessionId"];
+    [encoder encodeObject:[NSNumber numberWithInteger:self.imageCount] forKey:@"imageCount"];
 }
 
 - (nullable instancetype)initWithCoder:(NSCoder *)decoder {
-    return [self initWithRecording:[decoder decodeObjectForKey:@"recording"]
-                   withImageUrls:[decoder decodeObjectForKey:@"images"]];
+    NSString *recordingId = [decoder decodeObjectForKey:@"recordingId"];
+    FSRecording *_recording = [FSRecordingStore.sharedInstance recordingById:recordingId];
+    self = [self initWithRecording:_recording];
+    NSString *ssnId = [decoder decodeObjectForKey:@"sessionId"];
+    if (ssnId) {
+        sessionId = [ssnId copy];
+    }
+    NSNumber *imgCount = [decoder decodeObjectForKey:@"imageCount"];
+    if (imgCount) {
+        imageCount = [imgCount integerValue];
+    }
+    return self;
 }
 
 - (void)saveCustomObject:(FSCapturedMoments *)object key:(NSString *)key {
@@ -50,6 +68,22 @@
     NSData *encodedObject = [defaults objectForKey:key];
     FSCapturedMoments *object = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
     return object;
+}
+
+-(NSString *)folder {
+    return [self.recording.sessionsFolder stringByAppendingPathComponent:self.sessionId];
+}
+
+-(NSString *)imagesFolder {
+    return [self.folder stringByAppendingPathComponent:@"Images"];
+}
+
+-(NSString *)pathForIndex:(NSUInteger)index {
+    return [self.imagesFolder stringByAppendingPathComponent:[NSString stringWithFormat:@"%05ld.jpeg", index]];
+}
+
+-(void)addImage {
+    self.imageCount ++;
 }
 
 @end

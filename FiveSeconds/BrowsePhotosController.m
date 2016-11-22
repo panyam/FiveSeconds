@@ -81,7 +81,7 @@
     toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
     [toolbar setItems:@[[[UIBarButtonItem alloc] initWithTitle:@"Share" style:UIBarButtonItemStylePlain target:self action:@selector(share)],
                         [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:NULL],
-                        [[UIBarButtonItem alloc] initWithTitle:@"Delete Item" style:UIBarButtonItemStylePlain target:self action:@selector(removeItem)]]];
+                        [[UIBarButtonItem alloc] initWithTitle:@"Delete Item" style:UIBarButtonItemStylePlain target:self action:@selector(removeItem:)]]];
     [self.view addSubview:toolbar];
 }
 

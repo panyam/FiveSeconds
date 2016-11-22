@@ -12,12 +12,14 @@
 #import <AFNetworking/AFNetworking.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "FSVideo.h"
-#import "FSRecording.h"
+#import "FSRecordingStore.h"
+#import "FSCaptureSessionStore.h"
 #import "YTVideoCell.h"
 #import "YTVideosVC.h"
 #import "YTSearchVC.h"
 #import "FSVideoPlayer.h"
 #import "FSVideoPlayerControls.h"
+#import "FSMomentsCaptureControlsVC.h"
 
 typedef enum {
     RequestedVideoSource_Album,
@@ -26,7 +28,6 @@ typedef enum {
 
 @interface FSMyRecordingsVC ()
 
-@property (nonatomic, strong) NSMutableArray *recordings;
 @property (nonatomic) RequestedVideoSource requestedVideoSource;
 
 @end
@@ -35,7 +36,6 @@ typedef enum {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loadRecordings];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newRecordingCreated:)
                                                  name:NewRecordingCreated object:nil];
 }
@@ -48,7 +48,7 @@ typedef enum {
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1 + self.recordings.count;
+    return 1 + FSRecordingStore.sharedInstance.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -56,7 +56,7 @@ typedef enum {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddRecordingCell" forIndexPath:indexPath];
         return cell;
     } else {
-        FSRecording *recording = [self.recordings objectAtIndex:indexPath.row - 1];
+        FSRecording *recording = [FSRecordingStore.sharedInstance recordingAtIndex:indexPath.row - 1];
         FSVideo *video = recording.video;
         YTVideoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecordingCell" forIndexPath:indexPath];
         cell.titleLabel.text = video.title;
@@ -83,7 +83,7 @@ typedef enum {
     if (indexPath.row == 0) {
         [self loadVideo];
     } else {
-        [self capturePhotosForRecording:[self.recordings objectAtIndex:indexPath.row - 1]];
+        [self capturePhotosForRecording:[FSRecordingStore.sharedInstance recordingAtIndex:indexPath.row - 1]];
     }
 }
 
@@ -178,30 +178,9 @@ typedef enum {
  */
 -(void)newRecordingCreated:(NSNotification *)data {
     NSLog(@"Called when a new recording has been created.");
-    if (self.recordings == nil)
-        self.recordings = NSMutableArray.array;
-    [self.recordings insertObject:data.object atIndex:0];
-    [self saveRecordings];
+    [FSRecordingStore.sharedInstance add:data.object];
+    [FSRecordingStore.sharedInstance save];
     [self.tableView reloadData];
-}
-
--(void)saveRecordings {
-    [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:self.recordings]
-                                              forKey:@"FSMyrecordingsVC.recordings"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
--(void)loadRecordings {
-    NSUserDefaults *currentDefaults = [NSUserDefaults standardUserDefaults];
-    NSData *dataRepresentingSavedArray = [currentDefaults objectForKey:@"FSMyrecordingsVC.recordings"];
-    if (dataRepresentingSavedArray != nil)
-    {
-        NSArray *oldSavedArray = [NSKeyedUnarchiver unarchiveObjectWithData:dataRepresentingSavedArray];
-        if (oldSavedArray != nil)
-            self.recordings = [oldSavedArray mutableCopy];
-        else
-            self.recordings = [[NSMutableArray alloc] init];
-    }
 }
 
 # pragma mark - Photo Capturing
@@ -225,15 +204,7 @@ typedef enum {
     FSVideoPlayer *player = FSVideoPlayer.sharedInstance;
     
     if ([action isEqualToString:@"close"]) {
-        if (captureControlsVC.captureSession.length > 0) {
-        }
-        if (offsetsRecorderVC.recordedOffsets.count > 0) {
-            // then we have a new touch
-            FSRecording *recording = [[FSRecording alloc] initWithVideo:player.currentVideo
-                                                            withOffsets:offsetsRecorderVC.recordedOffsets];
-            [[NSNotificationCenter defaultCenter] postNotificationName:NewRecordingCreated object:recording];
-        }
-        offsetsRecorderVC.playBarButtonItem.title = @"Play";
+        [[NSNotificationCenter defaultCenter] postNotificationName:NewSessionCreated object:captureControlsVC.currentMoments];
         [FSVideoPlayer.sharedInstance hide];
         return YES;
     }

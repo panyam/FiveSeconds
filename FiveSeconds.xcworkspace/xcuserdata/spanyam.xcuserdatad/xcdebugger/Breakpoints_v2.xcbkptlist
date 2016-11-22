@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FiveSeconds/FSRecording.m"
-            timestampString = "501362214.071113"
+            timestampString = "501493158.130585"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "-loadCustomObjectWithKey:"
             landmarkType = "7">
          </BreakpointContent>

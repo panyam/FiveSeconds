@@ -37,6 +37,9 @@
 		F7A44D331DE3E2D200F626AA /* FSOffsetsRecorderControlsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A44D301DE3E2D200F626AA /* FSOffsetsRecorderControlsVC.xib */; };
 		F7A44D341DE3E2D200F626AA /* FSVideoPlayerControls.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A44D321DE3E2D200F626AA /* FSVideoPlayerControls.m */; };
 		F7A44D361DE3E31E00F626AA /* FSMomentsCaptureControlsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A44D351DE3E31E00F626AA /* FSMomentsCaptureControlsVC.xib */; };
+		F7A44D391DE4154000F626AA /* FSRecordingStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A44D381DE4154000F626AA /* FSRecordingStore.m */; };
+		F7A44D3C1DE41A7000F626AA /* FSMomentsCaptureControlsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A44D3B1DE41A7000F626AA /* FSMomentsCaptureControlsVC.m */; };
+		F7A44D3F1DE424AD00F626AA /* FSCaptureSessionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A44D3E1DE424AD00F626AA /* FSCaptureSessionStore.m */; };
 		F7A824D01DD68176001E5C9A /* YTVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A824CE1DD68176001E5C9A /* YTVideoCell.m */; };
 		F7C430A81DE176EF00AECC2E /* FSCapturesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C430A71DE176EF00AECC2E /* FSCapturesVC.m */; };
 		F7C430AC1DE17A0100AECC2E /* FSMyRecordingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C430AA1DE17A0100AECC2E /* FSMyRecordingsVC.m */; };
@@ -116,6 +119,12 @@
 		F7A44D311DE3E2D200F626AA /* FSVideoPlayerControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVideoPlayerControls.h; sourceTree = "<group>"; };
 		F7A44D321DE3E2D200F626AA /* FSVideoPlayerControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVideoPlayerControls.m; sourceTree = "<group>"; };
 		F7A44D351DE3E31E00F626AA /* FSMomentsCaptureControlsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSMomentsCaptureControlsVC.xib; sourceTree = "<group>"; };
+		F7A44D371DE4154000F626AA /* FSRecordingStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSRecordingStore.h; sourceTree = "<group>"; };
+		F7A44D381DE4154000F626AA /* FSRecordingStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSRecordingStore.m; sourceTree = "<group>"; };
+		F7A44D3A1DE41A7000F626AA /* FSMomentsCaptureControlsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMomentsCaptureControlsVC.h; sourceTree = "<group>"; };
+		F7A44D3B1DE41A7000F626AA /* FSMomentsCaptureControlsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMomentsCaptureControlsVC.m; sourceTree = "<group>"; };
+		F7A44D3D1DE424AD00F626AA /* FSCaptureSessionStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCaptureSessionStore.h; sourceTree = "<group>"; };
+		F7A44D3E1DE424AD00F626AA /* FSCaptureSessionStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCaptureSessionStore.m; sourceTree = "<group>"; };
 		F7A824CD1DD68176001E5C9A /* YTVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTVideoCell.h; sourceTree = "<group>"; };
 		F7A824CE1DD68176001E5C9A /* YTVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTVideoCell.m; sourceTree = "<group>"; };
 		F7C430A61DE176EF00AECC2E /* FSCapturesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCapturesVC.h; sourceTree = "<group>"; };
@@ -255,6 +264,12 @@
 				F7A44D2E1DE3DD3B00F626AA /* FSCapturedMomentsCell.m */,
 				E24D47A41DE3DE2600326D0B /* FSCapturedMoments.m */,
 				E24D47A61DE3DE3700326D0B /* FSCapturedMoments.h */,
+				F7A44D371DE4154000F626AA /* FSRecordingStore.h */,
+				F7A44D381DE4154000F626AA /* FSRecordingStore.m */,
+				F7A44D3A1DE41A7000F626AA /* FSMomentsCaptureControlsVC.h */,
+				F7A44D3B1DE41A7000F626AA /* FSMomentsCaptureControlsVC.m */,
+				F7A44D3D1DE424AD00F626AA /* FSCaptureSessionStore.h */,
+				F7A44D3E1DE424AD00F626AA /* FSCaptureSessionStore.m */,
 			);
 			path = FiveSeconds;
 			sourceTree = "<group>";
@@ -490,12 +505,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7A44D3F1DE424AD00F626AA /* FSCaptureSessionStore.m in Sources */,
 				F78132211DE2295B000A5B4F /* FSRecording.m in Sources */,
 				F7A824D01DD68176001E5C9A /* YTVideoCell.m in Sources */,
 				F7A44D341DE3E2D200F626AA /* FSVideoPlayerControls.m in Sources */,
 				E24D47A51DE3DE2600326D0B /* FSCapturedMoments.m in Sources */,
 				F78042501DD2B796003DE994 /* ViewController.m in Sources */,
 				F73CDF3D1DD92A5D00BE5F76 /* FSUtils.m in Sources */,
+				F7A44D3C1DE41A7000F626AA /* FSMomentsCaptureControlsVC.m in Sources */,
+				F7A44D391DE4154000F626AA /* FSRecordingStore.m in Sources */,
 				F7C430B51DE17BB500AECC2E /* FSCapturedMomentsVC.m in Sources */,
 				F780424D1DD2B796003DE994 /* AppDelegate.m in Sources */,
 				F7C430B81DE180F400AECC2E /* FSVideoPlayer.m in Sources */,

@@ -88,23 +88,3 @@
 
 @end
 
-
-@implementation FSMomentsCaptureControlsVC
-
-@synthesize captureBarButtonItem;
-@synthesize player;
-@synthesize callback;
-
--(IBAction)closeButtonClicked {
-    if (self.callback) {
-        self.callback(self, @"close", nil);
-    }
-}
-
--(IBAction)captureButtonClicked:(_Nonnull id)sender {
-    if (self.callback) {
-        self.captureBarButtonItem.enabled = NO;
-    }
-}
-
-@end

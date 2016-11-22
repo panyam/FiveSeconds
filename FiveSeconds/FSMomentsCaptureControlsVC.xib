@@ -28,7 +28,8 @@
                         <action selector="closeButtonClicked" destination="-1" eventType="touchUpInside" id="bPc-g3-0Xe"/>
                     </connections>
                 </button>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hlu-23-EXZ">
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hlu-23-EXZ">
+                    <frame key="frameInset" minY="623" width="375" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="wa8-JK-ChL"/>
                     </constraints>
@@ -37,22 +38,11 @@
                         <barButtonItem title="Capture" id="kHN-PQ-fAY"/>
                     </items>
                 </toolbar>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8J-cF-Wsp" userLabel="Record Touch">
-                    <connections>
-                        <action selector="touchRecorded:" destination="-1" eventType="touchUpInside" id="H9w-M6-GPH"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="0.56707019981593365" green="0.96731674141130808" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="hlu-23-EXZ" firstAttribute="leading" secondItem="R8J-cF-Wsp" secondAttribute="leading" id="2Wk-OZ-XIO"/>
-                <constraint firstItem="R8J-cF-Wsp" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="5k1-QB-HZM"/>
-                <constraint firstItem="R8J-cF-Wsp" firstAttribute="top" secondItem="G3D-RI-1a9" secondAttribute="bottom" constant="8" id="Cuc-SV-1oP"/>
-                <constraint firstItem="hlu-23-EXZ" firstAttribute="trailing" secondItem="R8J-cF-Wsp" secondAttribute="trailing" id="DV9-yz-4Hu"/>
                 <constraint firstItem="G3D-RI-1a9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="FsC-kq-fny"/>
-                <constraint firstAttribute="trailing" secondItem="R8J-cF-Wsp" secondAttribute="trailing" id="eeg-Dr-ewZ"/>
                 <constraint firstAttribute="bottom" secondItem="hlu-23-EXZ" secondAttribute="bottom" id="hCI-t4-YyT"/>
-                <constraint firstItem="hlu-23-EXZ" firstAttribute="top" secondItem="R8J-cF-Wsp" secondAttribute="bottom" id="hND-rG-UvV"/>
                 <constraint firstAttribute="trailing" secondItem="G3D-RI-1a9" secondAttribute="trailing" constant="16" id="hfp-ly-s2K"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="121.5"/>

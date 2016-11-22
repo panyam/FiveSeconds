@@ -11,11 +11,15 @@
 
 @interface FSCapturedMoments : NSObject<NSCoding>
 
--(id)initWithRecording:(FSRecording *)_recording
-       withImageUrls:(NSArray<NSURL *> *)_images;
+-(id)initWithRecording:(FSRecording *)_recording;
 
-@property (nonatomic, strong) FSRecording *recording;
-@property (nonatomic, copy) NSArray<NSURL *> *images;
+@property (nonatomic, readonly) NSString *sessionId;
+
+-(void)addImage;
+-(NSUInteger)imageCount;
+-(NSString *)folder;
+-(NSString *)imagesFolder;
+-(NSString *)pathForIndex:(NSUInteger)index;
 
 @end
 

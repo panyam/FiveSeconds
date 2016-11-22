@@ -40,6 +40,14 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)decoder {
+    return [self initWithVideo:[decoder decodeObjectForKey:@"metadata"]];
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:self.metadata forKey:@"metadata"];
+}
+
 -(void)preparePlayer:(FSVideoPlayer *)player {
     self.currentPlayer = player;
 }
