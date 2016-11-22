@@ -10,12 +10,15 @@
 
 @interface FSCapturedMomentsVC ()
 
+@property (nonatomic, strong) NSMutableArray *captures;
+
 @end
 
 @implementation FSCapturedMomentsVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self loadCaptures];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -32,24 +35,28 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.captures.count;
 }
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    FSRecording *recording = [self.recordings objectAtIndex:indexPath.row - 1];
+    FSVideo *video = recording.video;
+    YTVideoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecordingCell" forIndexPath:indexPath];
+    cell.titleLabel.text = video.title;
+    cell.dateLabel.text = video.createdDateString;
+    NSString *defaultPreviewImageUrl = video.defaultPreviewImageUrl;
     
-    // Configure the cell...
-    
+    [cell.previewImageView sd_setImageWithURL:[NSURL URLWithString:defaultPreviewImageUrl]
+                             placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     return cell;
-}
-*/
+
+}*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -94,5 +101,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)loadCaptures {
+    NSUserDefaults *currentDefaults = [NSUserDefaults standardUserDefaults];
+    NSData *dataRepresentingSavedArray = [currentDefaults objectForKey:@"FSMyrecordingsVC.recordings"];
+    if (dataRepresentingSavedArray != nil)
+    {
+        NSArray *oldSavedArray = [NSKeyedUnarchiver unarchiveObjectWithData:dataRepresentingSavedArray];
+        if (oldSavedArray != nil)
+            self.captures = [oldSavedArray mutableCopy];
+        else
+            self.captures = [[NSMutableArray alloc] init];
+    }
+}
 
 @end

@@ -7,21 +7,43 @@
 //
 
 #import "BrowsePhotosVC.h"
+#import "FbSharing.h"
+
+@interface BrowsePhotosVC ()
+
+@property (nonatomic, strong) FbSharing *fbSharing;
+
+@end
 
 @implementation BrowsePhotosVC
 
 @synthesize carousel;
 @synthesize items;
+@synthesize fbSharing;
 
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    
+    fbSharing = [[FbSharing init] alloc];
     
     //set up data
     //your carousel should always be driven by an array of
     //data of some kind - don't store data in your item views
     //or the recycling mechanism will destroy your data once
     //your item views move off-screen
+}
+
+-(IBAction)shareOnFacebook:(id)sender {
+    //    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    //    picker.delegate = self;
+    //    picker.allowsEditing = YES;
+    //    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    //    picker.showsCameraControls = NO;
+    //
+    //    [self presentViewController:picker animated:YES completion:NULL];
+    UIView* image = [[self carousel] currentItemView];
+    [fbSharing shareImage:image fromVC:self];
 }
 
 - (void)dealloc

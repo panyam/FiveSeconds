@@ -317,6 +317,19 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WXf-7p-mgv" userLabel="iCarousel" customClass="iCarousel">
                                 <frame key="frameInset" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4p4-sB-RUa">
+                                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <items>
+                                            <barButtonItem title="Share" id="tGp-2b-nR9">
+                                                <connections>
+                                                    <action selector="shareOnFacebook:" destination="e5X-rg-WPX" id="wn6-DG-AhF"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="e5X-rg-WPX" id="lum-60-MU5"/>
@@ -328,6 +341,7 @@
                     </view>
                     <connections>
                         <outlet property="carousel" destination="WXf-7p-mgv" id="Sav-lg-ZDu"/>
+                        <outlet property="share" destination="tGp-2b-nR9" id="KgQ-ee-wbT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yd9-Wf-qrg" userLabel="First Responder" sceneMemberID="firstResponder"/>
