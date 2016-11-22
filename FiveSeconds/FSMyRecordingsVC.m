@@ -157,8 +157,6 @@ typedef enum {
 # pragma mark - YT Video Loading
 
 -(void)loadVideoFromYouTube {
-//    self.ytPlayerView.hidden = NO;
-//    self.playerViewController.view.hidden = YES;
     [self performSegueWithIdentifier:@"youtube_vc" sender:self];
 }
 
