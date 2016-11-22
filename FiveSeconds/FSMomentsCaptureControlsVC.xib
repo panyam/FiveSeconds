@@ -6,11 +6,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FSCaptureMomentsControlsVC">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FSMomentsCaptureControlsVC">
             <connections>
-                <outlet property="playBarButtonItem" destination="tuW-8M-65H" id="bHx-vV-eGa"/>
-                <outlet property="recordBarButtonItem" destination="kHN-PQ-fAY" id="Uoa-Ut-EXI"/>
-                <outlet property="restartBarButtonItem" destination="gCt-Bd-dxi" id="BP4-55-cdU"/>
+                <outlet property="captureBarButtonItem" destination="kHN-PQ-fAY" id="kdd-ys-Izy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -35,23 +33,8 @@
                         <constraint firstAttribute="height" constant="44" id="wa8-JK-ChL"/>
                     </constraints>
                     <items>
-                        <barButtonItem title="Restart" id="gCt-Bd-dxi">
-                            <connections>
-                                <action selector="restartButtonClicked:" destination="-1" id="DJz-pB-mrt"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="w9m-oo-zNm"/>
-                        <barButtonItem title="Play" id="tuW-8M-65H">
-                            <connections>
-                                <action selector="playButtonClicked:" destination="-1" id="fWB-vv-ZYb"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="2Ic-b0-oaZ"/>
-                        <barButtonItem title="Record" id="kHN-PQ-fAY">
-                            <connections>
-                                <action selector="recordButtonClicked:" destination="-1" id="iKw-PH-dmc"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem title="Capture" id="kHN-PQ-fAY"/>
                     </items>
                 </toolbar>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8J-cF-Wsp" userLabel="Record Touch">

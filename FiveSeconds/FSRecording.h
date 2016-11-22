@@ -14,6 +14,7 @@
 -(id)initWithVideo:(FSVideo *)_video
        withOffsets:(NSArray *)_offsets;
 
+@property (nonatomic, readonly) unsigned long long recordingId;
 @property (nonatomic, strong) FSVideo *video;
 @property (nonatomic, copy) NSArray *offsets;
 

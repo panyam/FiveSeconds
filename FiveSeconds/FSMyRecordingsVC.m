@@ -83,7 +83,7 @@ typedef enum {
     if (indexPath.row == 0) {
         [self loadVideo];
     } else {
-        [self capturePhotos];
+        [self capturePhotosForRecording:[self.recordings objectAtIndex:indexPath.row - 1]];
     }
 }
 
@@ -205,15 +205,41 @@ typedef enum {
 }
 
 # pragma mark - Photo Capturing
--(void)capturePhotos {
+-(void)capturePhotosForRecording:(FSRecording *)recording {
+    FSVideoPlayer.sharedInstance.currentVideo = recording.video;
+    FSVideoPlayer.sharedInstance.controls = [[FSMomentsCaptureControlsVC alloc] init];
+    FSVideoPlayer.sharedInstance.controls.callback = ^(NSObject<FSVideoPlayerControls> *sender, NSString *action, NSObject *actionData) {
+        return [self handleCaptureAction:action forControls:sender withData:actionData];
+    };
+    [FSVideoPlayer.sharedInstance show];
 }
 
 
 #pragma mark -
 #pragma mark - Video Player controls
 
-// TODO - Make YTSearch have a "videoSelected" delegate and put this stuff in there
-// instead of having to do recording stuff here!
+-(BOOL)handleCaptureAction:(NSString *)action
+               forControls:(NSObject<FSVideoPlayerControls> *)sender
+                  withData:(id)actionData {
+    FSMomentsCaptureControlsVC *captureControlsVC = (FSMomentsCaptureControlsVC *)sender;
+    FSVideoPlayer *player = FSVideoPlayer.sharedInstance;
+    
+    if ([action isEqualToString:@"close"]) {
+        if (captureControlsVC.captureSession.length > 0) {
+        }
+        if (offsetsRecorderVC.recordedOffsets.count > 0) {
+            // then we have a new touch
+            FSRecording *recording = [[FSRecording alloc] initWithVideo:player.currentVideo
+                                                            withOffsets:offsetsRecorderVC.recordedOffsets];
+            [[NSNotificationCenter defaultCenter] postNotificationName:NewRecordingCreated object:recording];
+        }
+        offsetsRecorderVC.playBarButtonItem.title = @"Play";
+        [FSVideoPlayer.sharedInstance hide];
+        return YES;
+    }
+    return NO;
+}
+
 -(BOOL)handleRecorderAction:(NSString *)action
                 forControls:(NSObject<FSVideoPlayerControls> *)sender
                    withData:(id)actionData {

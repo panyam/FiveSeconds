@@ -21,19 +21,26 @@
     if (self) {
         self.video = _video;
         self.offsets = _offsets;
+        _recordingId = (unsigned long long)([[NSDate date] timeIntervalSince1970] * 1000);
     }
     return self;
 }
 
 - (id)initWithCoder:(NSCoder *)decoder {
-    return [self initWithVideo:[decoder decodeObjectForKey:@"video"]
-                   withOffsets:[decoder decodeObjectForKey:@"offsets"]];
+    FSRecording *out = [self initWithVideo:[decoder decodeObjectForKey:@"video"]
+                               withOffsets:[decoder decodeObjectForKey:@"offsets"]];
+    NSNumber *recId = [decoder decodeObjectForKey:@"recordingId"];
+    if (recId) {
+        _recordingId = [recId unsignedLongLongValue];
+    }
+    return out;
 }
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
     //Encode properties, other class variables, etc
     [encoder encodeObject:self.offsets forKey:@"offsets"];
     [encoder encodeObject:self.video forKey:@"video"];
+    [encoder encodeObject:[NSNumber numberWithUnsignedLongLong:self.recordingId] forKey:@"recordingId"];
 }
 
 - (void)saveCustomObject:(FSRecording *)object key:(NSString *)key {

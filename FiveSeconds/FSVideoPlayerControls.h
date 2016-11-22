@@ -47,9 +47,7 @@ typedef BOOL (^FSVideoControlsCallback)(NSObject<FSVideoPlayerControls> * _Nonnu
 
 @interface FSMomentsCaptureControlsVC : UIViewController<FSVideoPlayerControls>
 
-@property (nonatomic, strong) IBOutlet UIBarButtonItem * restartBarButtonItem;
-@property (nonatomic, strong) IBOutlet UIBarButtonItem * playBarButtonItem;
-@property (nonatomic, strong) IBOutlet UIBarButtonItem * recordBarButtonItem;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem * captureBarButtonItem;
 
 @property (nonnull, readonly) NSArray *recordedOffsets;
 @property (nonatomic) BOOL captureOffsetsOnTouch;
@@ -58,9 +56,6 @@ typedef BOOL (^FSVideoControlsCallback)(NSObject<FSVideoPlayerControls> * _Nonnu
 @property (nonatomic, copy) FSVideoControlsCallback _Nullable callback;
 
 -(IBAction)closeButtonClicked;
--(IBAction)restartButtonClicked:(_Nonnull id)sender;
--(IBAction)recordButtonClicked:(_Nonnull id)sender;
--(IBAction)playButtonClicked:(_Nonnull id)sender;
--(IBAction)touchRecorded:(_Nonnull id)sender;
+-(IBAction)captureButtonClicked:(_Nonnull id)sender;
 
 @end
