@@ -167,7 +167,7 @@ typedef enum {
         FSVideoPlayer.sharedInstance.currentVideo = video;
         FSVideoPlayer.sharedInstance.controls = [[FSOffsetsRecorderControlsVC alloc] init];
         FSVideoPlayer.sharedInstance.controls.callback = ^(NSObject<FSVideoPlayerControls> *sender, NSString *action, NSObject *actionData) {
-            return [self handleAction:action forControls:sender withData:actionData];
+            return [self handleRecorderAction:action forControls:sender withData:actionData];
         };
         [FSVideoPlayer.sharedInstance show];
     };
@@ -214,9 +214,9 @@ typedef enum {
 
 // TODO - Make YTSearch have a "videoSelected" delegate and put this stuff in there
 // instead of having to do recording stuff here!
--(BOOL)handleAction:(NSString *)action
-        forControls:(NSObject<FSVideoPlayerControls> *)sender
-           withData:(id)actionData {
+-(BOOL)handleRecorderAction:(NSString *)action
+                forControls:(NSObject<FSVideoPlayerControls> *)sender
+                   withData:(id)actionData {
     FSOffsetsRecorderControlsVC *offsetsRecorderVC = (FSOffsetsRecorderControlsVC *)sender;
     FSVideoPlayer *player = FSVideoPlayer.sharedInstance;
     
