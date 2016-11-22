@@ -204,7 +204,7 @@ typedef enum {
     FSVideoPlayer *player = FSVideoPlayer.sharedInstance;
     
     if ([action isEqualToString:@"close"]) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:NewSessionCreated object:captureControlsVC.currentMoments];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NewSessionCreated object:captureControlsVC.currentSession];
         [FSVideoPlayer.sharedInstance hide];
         return YES;
     }

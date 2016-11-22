@@ -51,9 +51,9 @@
 -(void)newSessionCreated:(NSNotification *)data {
     NSLog(@"Called when a new session has been created.");
     FSCaptureSession *session = data.object;
-    if (moments.imageCount > 0) {
+    if (session.imageCount > 0) {
         // then save it!
-        [FSCaptureSessionStore.sharedInstance add:moments];
+        [FSCaptureSessionStore.sharedInstance add:session];
         [FSCaptureSessionStore.sharedInstance save];
         [self.tableView reloadData];
     }

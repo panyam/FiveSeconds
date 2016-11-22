@@ -143,7 +143,7 @@
     NSAssert(error == nil, @"Error creating images directory");
     
     // Now we are safe to start taking snapshots
-    self.currentSession = [FSCaptureSessionStore.sharedInstance newMomentsForRecording:self.recording];
+    self.currentSession = [FSCaptureSessionStore.sharedInstance newSessionForRecording:self.recording];
     self.offsetIndex = 0;
     [self trackNextOffset];
 }

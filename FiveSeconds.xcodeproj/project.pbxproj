@@ -14,8 +14,8 @@
 		E24D479C1DE14B6300326D0B /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = E24D479A1DE14B6300326D0B /* background.png */; };
 		E24D479D1DE14B6300326D0B /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = E24D479B1DE14B6300326D0B /* page.png */; };
 		E24D47A01DE14EED00326D0B /* BrowsePhotosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D479E1DE14EED00326D0B /* BrowsePhotosVC.m */; };
-		E24D47A31DE3DAFD00326D0B /* CapturedMomentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D47A21DE3DAFD00326D0B /* CapturedMomentsCell.m */; };
-		E24D47A51DE3DE2600326D0B /* FSCapturedMoments.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D47A41DE3DE2600326D0B /* FSCapturedMoments.m */; };
+		E24D47A31DE3DAFD00326D0B /* CaptureSessionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D47A21DE3DAFD00326D0B /* CaptureSessionCell.m */; };
+		E24D47A51DE3DE2600326D0B /* FSCaptureSession.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D47A41DE3DE2600326D0B /* FSCaptureSession.m */; };
 		F7146AE91DE1A792007EE341 /* round_red_close_button_5095.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F7146AE81DE1A792007EE341 /* round_red_close_button_5095.jpg */; };
 		F73CDF3D1DD92A5D00BE5F76 /* FSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F73CDF3C1DD92A5D00BE5F76 /* FSUtils.m */; };
 		F73CDF401DD92BC300BE5F76 /* YTVideosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F73CDF3F1DD92BC300BE5F76 /* YTVideosVC.m */; };
@@ -33,7 +33,7 @@
 		F78042811DD2C631003DE994 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78042801DD2C631003DE994 /* CoreMedia.framework */; };
 		F78042831DD2C6E7003DE994 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78042821DD2C6E7003DE994 /* CoreGraphics.framework */; };
 		F78132211DE2295B000A5B4F /* FSRecording.m in Sources */ = {isa = PBXBuildFile; fileRef = F78132201DE2295B000A5B4F /* FSRecording.m */; };
-		F7A44D2F1DE3DD3B00F626AA /* FSCapturedMomentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A44D2E1DE3DD3B00F626AA /* FSCapturedMomentsCell.m */; };
+		F7A44D2F1DE3DD3B00F626AA /* FSCaptureSessionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A44D2E1DE3DD3B00F626AA /* FSCaptureSessionCell.m */; };
 		F7A44D331DE3E2D200F626AA /* FSOffsetsRecorderControlsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A44D301DE3E2D200F626AA /* FSOffsetsRecorderControlsVC.xib */; };
 		F7A44D341DE3E2D200F626AA /* FSVideoPlayerControls.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A44D321DE3E2D200F626AA /* FSVideoPlayerControls.m */; };
 		F7A44D361DE3E31E00F626AA /* FSMomentsCaptureControlsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A44D351DE3E31E00F626AA /* FSMomentsCaptureControlsVC.xib */; };
@@ -43,7 +43,7 @@
 		F7A824D01DD68176001E5C9A /* YTVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A824CE1DD68176001E5C9A /* YTVideoCell.m */; };
 		F7C430A81DE176EF00AECC2E /* FSCapturesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C430A71DE176EF00AECC2E /* FSCapturesVC.m */; };
 		F7C430AC1DE17A0100AECC2E /* FSMyRecordingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C430AA1DE17A0100AECC2E /* FSMyRecordingsVC.m */; };
-		F7C430B51DE17BB500AECC2E /* FSCapturedMomentsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C430B41DE17BB500AECC2E /* FSCapturedMomentsVC.m */; };
+		F7C430B51DE17BB500AECC2E /* FSCaptureSessionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C430B41DE17BB500AECC2E /* FSCaptureSessionsVC.m */; };
 		F7C430B81DE180F400AECC2E /* FSVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C430B71DE180F400AECC2E /* FSVideoPlayer.m */; };
 		F7C430BB1DE1886400AECC2E /* FSVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C430BA1DE1886400AECC2E /* FSVideo.m */; };
 		F7C430C81DE19A1600AECC2E /* FSYTVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C430C71DE19A1600AECC2E /* FSYTVideo.m */; };
@@ -79,10 +79,10 @@
 		E24D479B1DE14B6300326D0B /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
 		E24D479E1DE14EED00326D0B /* BrowsePhotosVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowsePhotosVC.m; sourceTree = "<group>"; };
 		E24D479F1DE14EED00326D0B /* BrowsePhotosVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowsePhotosVC.h; sourceTree = "<group>"; };
-		E24D47A11DE3DA4000326D0B /* CapturedMomentsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CapturedMomentsCell.h; sourceTree = "<group>"; };
-		E24D47A21DE3DAFD00326D0B /* CapturedMomentsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturedMomentsCell.m; sourceTree = "<group>"; };
-		E24D47A41DE3DE2600326D0B /* FSCapturedMoments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCapturedMoments.m; sourceTree = "<group>"; };
-		E24D47A61DE3DE3700326D0B /* FSCapturedMoments.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSCapturedMoments.h; sourceTree = "<group>"; };
+		E24D47A11DE3DA4000326D0B /* CaptureSessionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaptureSessionCell.h; sourceTree = "<group>"; };
+		E24D47A21DE3DAFD00326D0B /* CaptureSessionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionCell.m; sourceTree = "<group>"; };
+		E24D47A41DE3DE2600326D0B /* FSCaptureSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCaptureSession.m; sourceTree = "<group>"; };
+		E24D47A61DE3DE3700326D0B /* FSCaptureSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSCaptureSession.h; sourceTree = "<group>"; };
 		F7146AE81DE1A792007EE341 /* round_red_close_button_5095.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = round_red_close_button_5095.jpg; sourceTree = "<group>"; };
 		F723E7A81DD3D970001E8FE0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F73CDF3B1DD92A5D00BE5F76 /* FSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSUtils.h; sourceTree = "<group>"; };
@@ -113,8 +113,8 @@
 		F78042821DD2C6E7003DE994 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F781321F1DE2295B000A5B4F /* FSRecording.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSRecording.h; sourceTree = "<group>"; };
 		F78132201DE2295B000A5B4F /* FSRecording.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSRecording.m; sourceTree = "<group>"; };
-		F7A44D2D1DE3DD3B00F626AA /* FSCapturedMomentsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCapturedMomentsCell.h; sourceTree = "<group>"; };
-		F7A44D2E1DE3DD3B00F626AA /* FSCapturedMomentsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCapturedMomentsCell.m; sourceTree = "<group>"; };
+		F7A44D2D1DE3DD3B00F626AA /* FSCaptureSessionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCaptureSessionCell.h; sourceTree = "<group>"; };
+		F7A44D2E1DE3DD3B00F626AA /* FSCaptureSessionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCaptureSessionCell.m; sourceTree = "<group>"; };
 		F7A44D301DE3E2D200F626AA /* FSOffsetsRecorderControlsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSOffsetsRecorderControlsVC.xib; sourceTree = "<group>"; };
 		F7A44D311DE3E2D200F626AA /* FSVideoPlayerControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVideoPlayerControls.h; sourceTree = "<group>"; };
 		F7A44D321DE3E2D200F626AA /* FSVideoPlayerControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVideoPlayerControls.m; sourceTree = "<group>"; };
@@ -131,8 +131,8 @@
 		F7C430A71DE176EF00AECC2E /* FSCapturesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCapturesVC.m; sourceTree = "<group>"; };
 		F7C430A91DE17A0100AECC2E /* FSMyRecordingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMyRecordingsVC.h; sourceTree = "<group>"; };
 		F7C430AA1DE17A0100AECC2E /* FSMyRecordingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMyRecordingsVC.m; sourceTree = "<group>"; };
-		F7C430B31DE17BB500AECC2E /* FSCapturedMomentsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCapturedMomentsVC.h; sourceTree = "<group>"; };
-		F7C430B41DE17BB500AECC2E /* FSCapturedMomentsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCapturedMomentsVC.m; sourceTree = "<group>"; };
+		F7C430B31DE17BB500AECC2E /* FSCaptureSessionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCaptureSessionsVC.h; sourceTree = "<group>"; };
+		F7C430B41DE17BB500AECC2E /* FSCaptureSessionsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCaptureSessionsVC.m; sourceTree = "<group>"; };
 		F7C430B61DE180F400AECC2E /* FSVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVideoPlayer.h; sourceTree = "<group>"; };
 		F7C430B71DE180F400AECC2E /* FSVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVideoPlayer.m; sourceTree = "<group>"; };
 		F7C430B91DE1886400AECC2E /* FSVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVideo.h; sourceTree = "<group>"; };
@@ -240,8 +240,8 @@
 				F75A35BC1DD58A1C00C3A75C /* YTSearchVC.m */,
 				F7A824CD1DD68176001E5C9A /* YTVideoCell.h */,
 				F7A824CE1DD68176001E5C9A /* YTVideoCell.m */,
-				E24D47A11DE3DA4000326D0B /* CapturedMomentsCell.h */,
-				E24D47A21DE3DAFD00326D0B /* CapturedMomentsCell.m */,
+				E24D47A11DE3DA4000326D0B /* CaptureSessionCell.h */,
+				E24D47A21DE3DAFD00326D0B /* CaptureSessionCell.m */,
 				F73CDF3B1DD92A5D00BE5F76 /* FSUtils.h */,
 				F73CDF3C1DD92A5D00BE5F76 /* FSUtils.m */,
 				F73CDF3E1DD92BC300BE5F76 /* YTVideosVC.h */,
@@ -250,8 +250,8 @@
 				F7C430A71DE176EF00AECC2E /* FSCapturesVC.m */,
 				F7C430A91DE17A0100AECC2E /* FSMyRecordingsVC.h */,
 				F7C430AA1DE17A0100AECC2E /* FSMyRecordingsVC.m */,
-				F7C430B31DE17BB500AECC2E /* FSCapturedMomentsVC.h */,
-				F7C430B41DE17BB500AECC2E /* FSCapturedMomentsVC.m */,
+				F7C430B31DE17BB500AECC2E /* FSCaptureSessionsVC.h */,
+				F7C430B41DE17BB500AECC2E /* FSCaptureSessionsVC.m */,
 				F7C430B61DE180F400AECC2E /* FSVideoPlayer.h */,
 				F7C430B71DE180F400AECC2E /* FSVideoPlayer.m */,
 				F7C430B91DE1886400AECC2E /* FSVideo.h */,
@@ -260,10 +260,10 @@
 				F7C430C71DE19A1600AECC2E /* FSYTVideo.m */,
 				F781321F1DE2295B000A5B4F /* FSRecording.h */,
 				F78132201DE2295B000A5B4F /* FSRecording.m */,
-				F7A44D2D1DE3DD3B00F626AA /* FSCapturedMomentsCell.h */,
-				F7A44D2E1DE3DD3B00F626AA /* FSCapturedMomentsCell.m */,
-				E24D47A41DE3DE2600326D0B /* FSCapturedMoments.m */,
-				E24D47A61DE3DE3700326D0B /* FSCapturedMoments.h */,
+				F7A44D2D1DE3DD3B00F626AA /* FSCaptureSessionCell.h */,
+				F7A44D2E1DE3DD3B00F626AA /* FSCaptureSessionCell.m */,
+				E24D47A41DE3DE2600326D0B /* FSCaptureSession.m */,
+				E24D47A61DE3DE3700326D0B /* FSCaptureSession.h */,
 				F7A44D371DE4154000F626AA /* FSRecordingStore.h */,
 				F7A44D381DE4154000F626AA /* FSRecordingStore.m */,
 				F7A44D3A1DE41A7000F626AA /* FSMomentsCaptureControlsVC.h */,
@@ -509,21 +509,21 @@
 				F78132211DE2295B000A5B4F /* FSRecording.m in Sources */,
 				F7A824D01DD68176001E5C9A /* YTVideoCell.m in Sources */,
 				F7A44D341DE3E2D200F626AA /* FSVideoPlayerControls.m in Sources */,
-				E24D47A51DE3DE2600326D0B /* FSCapturedMoments.m in Sources */,
+				E24D47A51DE3DE2600326D0B /* FSCaptureSession.m in Sources */,
 				F78042501DD2B796003DE994 /* ViewController.m in Sources */,
 				F73CDF3D1DD92A5D00BE5F76 /* FSUtils.m in Sources */,
 				F7A44D3C1DE41A7000F626AA /* FSMomentsCaptureControlsVC.m in Sources */,
 				F7A44D391DE4154000F626AA /* FSRecordingStore.m in Sources */,
-				F7C430B51DE17BB500AECC2E /* FSCapturedMomentsVC.m in Sources */,
+				F7C430B51DE17BB500AECC2E /* FSCaptureSessionsVC.m in Sources */,
 				F780424D1DD2B796003DE994 /* AppDelegate.m in Sources */,
 				F7C430B81DE180F400AECC2E /* FSVideoPlayer.m in Sources */,
 				E203EF9B1DD977C200E0F780 /* BrowsePhotosController.m in Sources */,
 				F7C430AC1DE17A0100AECC2E /* FSMyRecordingsVC.m in Sources */,
-				E24D47A31DE3DAFD00326D0B /* CapturedMomentsCell.m in Sources */,
+				E24D47A31DE3DAFD00326D0B /* CaptureSessionCell.m in Sources */,
 				E24D47A01DE14EED00326D0B /* BrowsePhotosVC.m in Sources */,
 				E203EF981DD5669700E0F780 /* FbSharing.m in Sources */,
 				F7C430A81DE176EF00AECC2E /* FSCapturesVC.m in Sources */,
-				F7A44D2F1DE3DD3B00F626AA /* FSCapturedMomentsCell.m in Sources */,
+				F7A44D2F1DE3DD3B00F626AA /* FSCaptureSessionCell.m in Sources */,
 				F780424A1DD2B796003DE994 /* main.m in Sources */,
 				F75A35BD1DD58A1C00C3A75C /* YTSearchVC.m in Sources */,
 				F73CDF401DD92BC300BE5F76 /* YTVideosVC.m in Sources */,
