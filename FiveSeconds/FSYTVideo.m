@@ -69,7 +69,28 @@
     UIWindow *window = self.currentPlayer.playerWindow;
     window.rootViewController = [[UIViewController alloc] init];
     [window.rootViewController.view addSubview:self.ytPlayerView];
+    // set constraints to handle window's size changes
     self.ytPlayerView.frame = window.bounds;
+    [self setLayoutConstraints];
+}
+
+-(void)setLayoutConstraints {
+    UIView *parentView = self.ytPlayerView.superview;
+    UILayoutGuide *margins = parentView.layoutMarginsGuide;
+    UIView *childView = self.ytPlayerView;
+    [childView.leadingAnchor constraintEqualToAnchor:margins.leadingAnchor].active = true;
+    [childView.trailingAnchor constraintEqualToAnchor:margins.trailingAnchor].active = true;
+    [childView.topAnchor constraintEqualToAnchor:margins.topAnchor].active = true;
+    [childView.bottomAnchor constraintEqualToAnchor:margins.bottomAnchor].active = true;
+    parentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin |UIViewAutoresizingFlexibleBottomMargin;
+    
+    margins = self.ytPlayerView.layoutMarginsGuide;
+    childView = self.ytPlayerView.webView;
+    [childView.leadingAnchor constraintEqualToAnchor:margins.leadingAnchor].active = true;
+    [childView.trailingAnchor constraintEqualToAnchor:margins.trailingAnchor].active = true;
+    [childView.topAnchor constraintEqualToAnchor:margins.topAnchor].active = true;
+    [childView.bottomAnchor constraintEqualToAnchor:margins.bottomAnchor].active = true;
+    self.ytPlayerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin |UIViewAutoresizingFlexibleBottomMargin;
 }
 
 -(void)playFromOffset:(NSTimeInterval)offset {
