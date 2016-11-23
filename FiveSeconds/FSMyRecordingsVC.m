@@ -186,8 +186,10 @@ typedef enum {
 # pragma mark - Photo Capturing
 -(void)capturePhotosForRecording:(FSRecording *)recording {
     FSVideoPlayer.sharedInstance.currentVideo = recording.video;
-    FSVideoPlayer.sharedInstance.controls = [[FSMomentsCaptureControlsVC alloc] init];
-    FSVideoPlayer.sharedInstance.controls.callback = ^(NSObject<FSVideoPlayerControls> *sender, NSString *action, NSObject *actionData) {
+    FSMomentsCaptureControlsVC *controlsVC = [[FSMomentsCaptureControlsVC alloc] init];
+    FSVideoPlayer.sharedInstance.controls = controlsVC;
+    controlsVC.recording = recording;
+    controlsVC.callback = ^(NSObject<FSVideoPlayerControls> *sender, NSString *action, NSObject *actionData) {
         return [self handleCaptureAction:action forControls:sender withData:actionData];
     };
     [FSVideoPlayer.sharedInstance show];
@@ -204,9 +206,14 @@ typedef enum {
     
     if ([action isEqualToString:@"close"]) {
         [[NSNotificationCenter defaultCenter] postNotificationName:NewSessionCreated object:captureControlsVC.currentSession];
+        [FSVideoPlayer.sharedInstance.currentVideo stop];
         [FSVideoPlayer.sharedInstance hide];
         return YES;
     }
+//    if ([action isEqualToString:@"capture"]) {
+//        [FSVideoPlayer.sharedInstance.currentVideo playFromOffset:0];
+//        return YES;
+//    }
     return NO;
 }
 

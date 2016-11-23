@@ -143,6 +143,7 @@
     NSAssert(error == nil, @"Error creating images directory");
     
     // Now we are safe to start taking snapshots
+    [self.player.currentVideo playFromOffset:0];
     self.currentSession = [FSCaptureSessionStore.sharedInstance newSessionForRecording:self.recording];
     self.offsetIndex = 0;
     [self trackNextOffset];
@@ -150,6 +151,8 @@
 
 -(void)trackNextOffset {
     if (self.offsetIndex >= self.recording.offsets.count) {
+        NSLog(@"Tracking complete.  No more offsets left");
+
         // we are done with all photos so quit
         if (self.callback)
             self.callback(self, @"captured", nil);
@@ -157,6 +160,8 @@
     }
     
     NSNumber *currOffset = [self.recording.offsets objectAtIndex:self.offsetIndex];
+    NSString *remainingOffsets = [self.recording.offsets componentsJoinedByString:@", "];
+    NSLog(@"Tracking offset, curr video time: %@, Offsets Remaining: %@", currOffset, remainingOffsets);
     NSTimeInterval currVideoTime = self.player.currentVideo.offset;
     NSTimeInterval nextTime = [currOffset doubleValue];
     double SNAP_DELTA = 0.01;   // 10 milliseconds is "close" enough

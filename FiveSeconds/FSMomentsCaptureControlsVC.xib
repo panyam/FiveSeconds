@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FSMomentsCaptureControlsVC">
             <connections>
-                <outlet property="captureBarButtonItem" destination="kHN-PQ-fAY" id="kdd-ys-Izy"/>
+                <outlet property="captureBarButtonItem" destination="kHN-PQ-fAY" id="Uoa-Ut-EXI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,30 +20,35 @@
                 <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3D-RI-1a9" userLabel="Close">
                     <color key="backgroundColor" red="1" green="0.30941753039999997" blue="0.28643036259999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstAttribute="height" constant="64" id="BA8-fo-mrd"/>
                         <constraint firstAttribute="width" constant="65" id="IYJ-c9-33s"/>
-                        <constraint firstAttribute="height" constant="64" id="eds-tQ-Z03"/>
                     </constraints>
                     <state key="normal" image="round_red_close_button_5095.jpg" backgroundImage="round_red_close_button_5095.jpg"/>
                     <connections>
                         <action selector="closeButtonClicked" destination="-1" eventType="touchUpInside" id="bPc-g3-0Xe"/>
                     </connections>
                 </button>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hlu-23-EXZ">
-                    <frame key="frameInset" minY="623" width="375" height="44"/>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hlu-23-EXZ" userLabel="I">
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="wa8-JK-ChL"/>
                     </constraints>
                     <items>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="2Ic-b0-oaZ"/>
-                        <barButtonItem title="Capture" id="kHN-PQ-fAY"/>
+                        <barButtonItem title="Capture" id="kHN-PQ-fAY">
+                            <connections>
+                                <action selector="captureButtonClicked:" destination="-1" id="iKw-PH-dmc"/>
+                            </connections>
+                        </barButtonItem>
                     </items>
                 </toolbar>
             </subviews>
             <color key="backgroundColor" red="0.56707019981593365" green="0.96731674141130808" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="G3D-RI-1a9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="FsC-kq-fny"/>
-                <constraint firstAttribute="bottom" secondItem="hlu-23-EXZ" secondAttribute="bottom" id="hCI-t4-YyT"/>
-                <constraint firstAttribute="trailing" secondItem="G3D-RI-1a9" secondAttribute="trailing" constant="16" id="hfp-ly-s2K"/>
+                <constraint firstAttribute="trailing" secondItem="G3D-RI-1a9" secondAttribute="trailing" constant="16" id="2IC-ep-H8L"/>
+                <constraint firstItem="hlu-23-EXZ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="B7h-40-Wj4"/>
+                <constraint firstItem="hlu-23-EXZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Br1-5m-G4w"/>
+                <constraint firstItem="G3D-RI-1a9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="GPR-jM-rMY"/>
+                <constraint firstAttribute="bottom" secondItem="hlu-23-EXZ" secondAttribute="bottom" id="KOB-Om-Goy"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="121.5"/>
         </view>
