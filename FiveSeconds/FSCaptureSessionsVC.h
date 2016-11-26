@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FSCaptureSessionsVC : UITableViewController
+@interface FSCaptureSessionsVC : UITableViewController<UICollectionViewDataSource, UICollectionViewDelegate>
 
 @end

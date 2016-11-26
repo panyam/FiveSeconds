@@ -13,4 +13,5 @@
 @property (nonatomic, strong) IBOutlet UIImageView *previewImageView;
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) IBOutlet UICollectionView *photos;
+
 @end

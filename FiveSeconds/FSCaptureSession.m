@@ -11,7 +11,6 @@
 
 @interface FSCaptureSession()
 
-@property (nonatomic, strong) FSRecording *recording;
 @property (nonatomic) NSUInteger imageCount;
 
 @end

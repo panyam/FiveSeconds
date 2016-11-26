@@ -15,6 +15,8 @@
 
 @property (nonatomic, readonly) NSString *sessionId;
 
+@property (nonatomic, strong) FSRecording *recording;
+
 -(void)addImage;
 -(NSUInteger)imageCount;
 -(NSString *)folder;
