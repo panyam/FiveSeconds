@@ -60,12 +60,11 @@
 -(void)tableView:(UITableView *)tableView willDisplayCell:(FSCaptureSessionCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [cell setCollectionViewDataSourceDelegate:self indexPath:indexPath];
-    NSInteger index = cell.collectionView.indexPath.row;
-    
-    CGFloat horizontalOffset = [self.contentOffsetDictionary[[@(index) stringValue]] floatValue];
-    [cell.collectionView setContentOffset:CGPointMake(horizontalOffset, 0)];
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
 
 # pragma mark - Collection view data source
 #pragma mark - UICollectionViewDataSource Methods
@@ -102,17 +101,5 @@
         [self.tableView reloadData];
     }
 }
-
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    if (![scrollView isKindOfClass:[UICollectionView class]]) return;
-    
-    CGFloat horizontalOffset = scrollView.contentOffset.x;
-    
-    AFIndexedCollectionView *collectionView = (AFIndexedCollectionView *)scrollView;
-    NSInteger index = collectionView.indexPath.row;
-    self.contentOffsetDictionary[[@(index) stringValue]] = @(horizontalOffset);
-}
-
 
 @end

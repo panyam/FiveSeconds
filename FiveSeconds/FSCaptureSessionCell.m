@@ -33,11 +33,11 @@
 //    [self.contentView addSubview:self.collectionView];
 }
 
--(void)layoutSubviews
-{
-    [super layoutSubviews];
-    self.collectionView.frame = self.contentView.bounds;
-}
+//-(void)layoutSubviews
+//{
+//    [super layoutSubviews];
+//    self.collectionView.frame = self.contentView.bounds;
+//}
 
 - (void)setCollectionViewDataSourceDelegate:(id<UICollectionViewDataSource, UICollectionViewDelegate>)dataSourceDelegate indexPath:(NSIndexPath *)indexPath
 {
