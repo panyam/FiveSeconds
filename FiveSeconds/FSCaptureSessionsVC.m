@@ -12,7 +12,7 @@
 #import "FSCaptureSessionCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "FSCapturedMomentCell.h"
-#import "BrowsePhotoVC.h"
+#import "BrowsePhotosVC.h"
 
 @interface FSCaptureSessionsVC ()
 
@@ -103,7 +103,8 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue
                 sender:(id)sender {
     BrowsePhotosVC *vc = (BrowsePhotosVC*)[segue destinationViewController];
-    vc.items = [self capturedImages];
+    //vc.sessionId =
+    //vc.items = [self capturedImages];
 }
 
 @end
