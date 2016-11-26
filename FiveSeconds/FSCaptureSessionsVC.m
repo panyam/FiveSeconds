@@ -12,10 +12,9 @@
 #import "FSCaptureSessionCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "FSCapturedMomentCell.h"
+#import "BrowsePhotoVC.h"
 
 @interface FSCaptureSessionsVC ()
-
-@property (nonatomic, strong) NSMutableDictionary *contentOffsetDictionary;
 
 @end
 
@@ -25,7 +24,6 @@
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newSessionCreated:)
                                                  name:NewSessionCreated object:nil];
-    self.contentOffsetDictionary = [NSMutableDictionary dictionary];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -100,6 +98,12 @@
         [FSCaptureSessionStore.sharedInstance save];
         [self.tableView reloadData];
     }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue
+                sender:(id)sender {
+    BrowsePhotosVC *vc = (BrowsePhotosVC*)[segue destinationViewController];
+    vc.items = [self capturedImages];
 }
 
 @end

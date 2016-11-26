@@ -8,6 +8,7 @@
 
 #import "BrowsePhotosVC.h"
 #import "FbSharing.h"
+#import "FSCaptureSessionStore.h"
 
 @interface BrowsePhotosVC ()
 
@@ -32,6 +33,16 @@
     //data of some kind - don't store data in your item views
     //or the recycling mechanism will destroy your data once
     //your item views move off-screen
+    
+    FSCaptureSession* captureSession = [[FSCaptureSessionStore sharedInstance] sessionAtIndex:_sessionId];
+    self.items = [NSMutableArray array];
+
+    for(int i = 0; i < captureSession.imageCount; i++) {
+        NSURL *url = [NSURL fileURLWithPath:[captureSession pathForIndex:i]];
+        NSData *imageData = [NSData dataWithContentsOfURL:url];
+        UIImage *image = [UIImage imageWithData:imageData];
+        [items addObject: image];
+    }
 }
 
 -(IBAction)shareOnFacebook:(id)sender {

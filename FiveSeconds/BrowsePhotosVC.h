@@ -14,6 +14,7 @@
 @property (nonatomic, strong) IBOutlet iCarousel *carousel;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *share;
 @property (nonatomic, strong) NSMutableArray<UIImage*> *items;
+@property (nonatomic, copy) NSString* sessionId;
 
 -(IBAction)shareOnFacebook:(id)sender;
 

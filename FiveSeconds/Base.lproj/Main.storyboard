@@ -220,6 +220,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Moments" id="kGX-H4-m1s"/>
+                    <connections>
+                        <segue destination="e5X-rg-WPX" kind="show" identifier="carousel_vc" id="MUa-KQ-4Ql"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7A-88-O2d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -511,6 +514,7 @@
         <image name="round_red_close_button_5095.jpg" width="254" height="252"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qWY-Cb-5cX"/>
+        <segue reference="umx-HF-iux"/>
+        <segue reference="MUa-KQ-4Ql"/>
     </inferredMetricsTieBreakers>
 </document>
