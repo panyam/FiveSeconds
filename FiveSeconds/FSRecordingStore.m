@@ -51,7 +51,8 @@
 }
 
 -(FSRecording *)recordingById:(NSString *)recordingId {
-    return [self.recordingsById objectForKey:recordingsById];
+    FSRecording *out = [self.recordingsById objectForKey:recordingId];
+    return out;
 }
 
 -(void)load {
