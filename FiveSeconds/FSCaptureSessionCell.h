@@ -10,6 +10,7 @@
 
 @interface AFIndexedCollectionView : UICollectionView
 @property (nonatomic, strong) NSIndexPath *indexPath;
+@property (nonatomic, copy) NSString *sessionId;
 @end
 
 static NSString *CollectionViewCellIdentifier = @"CollectionViewCellIdentifier";
@@ -19,6 +20,7 @@ static NSString *CollectionViewCellIdentifier = @"CollectionViewCellIdentifier";
 @property (nonatomic, strong) IBOutlet UIImageView *previewImageView;
 @property (nonatomic, strong) IBOutlet UICollectionView *thumbnailsView;
 @property (nonatomic, strong) IBOutlet UILabel *dateTakenLabel;
+@property (nonatomic, copy) NSString *sessionId;
 
 @property (nonatomic, strong) IBOutlet AFIndexedCollectionView *collectionView;
 

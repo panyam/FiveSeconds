@@ -16,6 +16,7 @@
 		E24D47A01DE14EED00326D0B /* BrowsePhotosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D479E1DE14EED00326D0B /* BrowsePhotosVC.m */; };
 		E24D47A31DE3DAFD00326D0B /* CaptureSessionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D47A21DE3DAFD00326D0B /* CaptureSessionCell.m */; };
 		E24D47A51DE3DE2600326D0B /* FSCaptureSession.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D47A41DE3DE2600326D0B /* FSCaptureSession.m */; };
+		E28C00DD1DE956E300D9EDF4 /* FSCapturedMomentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E28C00DC1DE956E300D9EDF4 /* FSCapturedMomentCell.m */; };
 		F7146AE91DE1A792007EE341 /* round_red_close_button_5095.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F7146AE81DE1A792007EE341 /* round_red_close_button_5095.jpg */; };
 		F73CDF3D1DD92A5D00BE5F76 /* FSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F73CDF3C1DD92A5D00BE5F76 /* FSUtils.m */; };
 		F73CDF401DD92BC300BE5F76 /* YTVideosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F73CDF3F1DD92BC300BE5F76 /* YTVideosVC.m */; };
@@ -83,6 +84,8 @@
 		E24D47A21DE3DAFD00326D0B /* CaptureSessionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionCell.m; sourceTree = "<group>"; };
 		E24D47A41DE3DE2600326D0B /* FSCaptureSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCaptureSession.m; sourceTree = "<group>"; };
 		E24D47A61DE3DE3700326D0B /* FSCaptureSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSCaptureSession.h; sourceTree = "<group>"; };
+		E28C00DB1DE956E300D9EDF4 /* FSCapturedMomentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCapturedMomentCell.h; sourceTree = "<group>"; };
+		E28C00DC1DE956E300D9EDF4 /* FSCapturedMomentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCapturedMomentCell.m; sourceTree = "<group>"; };
 		F7146AE81DE1A792007EE341 /* round_red_close_button_5095.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = round_red_close_button_5095.jpg; sourceTree = "<group>"; };
 		F723E7A81DD3D970001E8FE0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F73CDF3B1DD92A5D00BE5F76 /* FSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSUtils.h; sourceTree = "<group>"; };
@@ -270,6 +273,8 @@
 				F7A44D3B1DE41A7000F626AA /* FSMomentsCaptureControlsVC.m */,
 				F7A44D3D1DE424AD00F626AA /* FSCaptureSessionStore.h */,
 				F7A44D3E1DE424AD00F626AA /* FSCaptureSessionStore.m */,
+				E28C00DB1DE956E300D9EDF4 /* FSCapturedMomentCell.h */,
+				E28C00DC1DE956E300D9EDF4 /* FSCapturedMomentCell.m */,
 			);
 			path = FiveSeconds;
 			sourceTree = "<group>";
@@ -384,7 +389,7 @@
 				TargetAttributes = {
 					F78042441DD2B796003DE994 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = GYYZ2J5D87;
+						DevelopmentTeam = YK36MNU24P;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -509,6 +514,7 @@
 				F78132211DE2295B000A5B4F /* FSRecording.m in Sources */,
 				F7A824D01DD68176001E5C9A /* YTVideoCell.m in Sources */,
 				F7A44D341DE3E2D200F626AA /* FSVideoPlayerControls.m in Sources */,
+				E28C00DD1DE956E300D9EDF4 /* FSCapturedMomentCell.m in Sources */,
 				E24D47A51DE3DE2600326D0B /* FSCaptureSession.m in Sources */,
 				F78042501DD2B796003DE994 /* ViewController.m in Sources */,
 				F73CDF3D1DD92A5D00BE5F76 /* FSUtils.m in Sources */,
@@ -678,7 +684,7 @@
 			baseConfigurationReference = 06D0F5568D24815FA967E280 /* Pods-FiveSeconds.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GYYZ2J5D87;
+				DEVELOPMENT_TEAM = YK36MNU24P;
 				INFOPLIST_FILE = FiveSeconds/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackery.FiveSeconds;
@@ -692,7 +698,7 @@
 			baseConfigurationReference = 014B811B73F1B4B0839630F5 /* Pods-FiveSeconds.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GYYZ2J5D87;
+				DEVELOPMENT_TEAM = YK36MNU24P;
 				INFOPLIST_FILE = FiveSeconds/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackery.FiveSeconds;

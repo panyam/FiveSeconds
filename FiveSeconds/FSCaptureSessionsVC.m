@@ -11,6 +11,7 @@
 #import "FSCaptureSessionStore.h"
 #import "FSCaptureSessionCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "FSCapturedMomentCell.h"
 
 @interface FSCaptureSessionsVC ()
 
@@ -49,6 +50,7 @@
     FSVideo *video = recording.video;
     FSCaptureSessionCell* captureCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     captureCell.dateTakenLabel.text = captureSession.sessionId;
+    captureCell.sessionId = captureSession.sessionId;
     NSString *defaultPreviewImageUrl = video.defaultPreviewImageUrl;
     [captureCell.previewImageView sd_setImageWithURL:[NSURL URLWithString:defaultPreviewImageUrl]
                              placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
@@ -70,14 +72,22 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 3;
-//    NSArray *collectionViewArray = self.colorArray[[(AFIndexedCollectionView *)collectionView indexPath].row];
-//    return collectionViewArray.count;
+    NSInteger row = [[(AFIndexedCollectionView*) collectionView indexPath] row];
+    FSCaptureSession *captureSession = [[FSCaptureSessionStore sharedInstance] sessionAtIndex:row];
+
+    return captureSession.imageCount;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CollectionViewCellIdentifier forIndexPath:indexPath];
+    NSInteger row = [[(AFIndexedCollectionView*) collectionView indexPath] row];
+    FSCaptureSession *captureSession = [[FSCaptureSessionStore sharedInstance] sessionAtIndex:row];
+    
+    
+    FSCapturedMomentCell *cell = (FSCapturedMomentCell*)[collectionView dequeueReusableCellWithReuseIdentifier:CollectionViewCellIdentifier forIndexPath:indexPath];
+
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[captureSession pathForIndex:indexPath.item]]
+                      placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     
     if (indexPath.item == 0)
         cell.backgroundColor = [UIColor redColor];
