@@ -389,7 +389,7 @@
 				TargetAttributes = {
 					F78042441DD2B796003DE994 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = GYYZ2J5D87;
+						DevelopmentTeam = YK36MNU24P;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -684,7 +684,7 @@
 			baseConfigurationReference = 06D0F5568D24815FA967E280 /* Pods-FiveSeconds.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GYYZ2J5D87;
+				DEVELOPMENT_TEAM = YK36MNU24P;
 				INFOPLIST_FILE = FiveSeconds/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackery.FiveSeconds;
@@ -698,7 +698,7 @@
 			baseConfigurationReference = 014B811B73F1B4B0839630F5 /* Pods-FiveSeconds.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GYYZ2J5D87;
+				DEVELOPMENT_TEAM = YK36MNU24P;
 				INFOPLIST_FILE = FiveSeconds/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackery.FiveSeconds;

@@ -41,6 +41,13 @@
     return 1;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    FSCaptureSessionCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSString* sessionId = cell.sessionId;
+    [self performSegueWithIdentifier:@"carousel_vc" sender:self];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"CaptureSessionCell";
     FSCaptureSession *captureSession = [FSCaptureSessionStore.sharedInstance sessionAtIndex:indexPath.row];
@@ -58,10 +65,6 @@
 -(void)tableView:(UITableView *)tableView willDisplayCell:(FSCaptureSessionCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [cell setCollectionViewDataSourceDelegate:self indexPath:indexPath];
-}
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 # pragma mark - Collection view data source
