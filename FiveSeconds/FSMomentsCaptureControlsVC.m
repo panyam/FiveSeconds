@@ -42,6 +42,19 @@
 @synthesize offsetIndex;
 @synthesize imageURLs;
 
++(SystemSoundID)inverseShutterSound {
+    static SystemSoundID soundID = 0;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if (soundID == 0) {
+            NSString *path = [[NSBundle mainBundle] pathForResource:@"photoShutter2" ofType:@"caf"];
+            NSURL *filePath = [NSURL fileURLWithPath:path isDirectory:NO];
+            AudioServicesCreateSystemSoundID((__bridge CFURLRef)filePath, &soundID);
+        }
+    });
+    return soundID;
+}
+
 -(void)viewDidLoad {
     [super viewDidLoad];
     [self initializeCamera];
@@ -196,6 +209,8 @@
     }
     
     __weak typeof(self) weakSelf = self;
+    SystemSoundID soundID = [[self class] inverseShutterSound];
+    AudioServicesPlaySystemSound(soundID);
     [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:self.videoConnection completionHandler:^(CMSampleBufferRef imageSampleBuffer, NSError *error) {
         if (error) {
             if (completion) {

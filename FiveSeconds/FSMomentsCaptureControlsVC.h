@@ -24,5 +24,6 @@
 
 -(NSUInteger)numCaptured;
 -(FSCaptureSession *)currentSession;
++(SystemSoundID)inverseShutterSound;
 
 @end

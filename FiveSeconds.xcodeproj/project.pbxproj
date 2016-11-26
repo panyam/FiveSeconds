@@ -17,6 +17,7 @@
 		E24D47A31DE3DAFD00326D0B /* CaptureSessionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D47A21DE3DAFD00326D0B /* CaptureSessionCell.m */; };
 		E24D47A51DE3DE2600326D0B /* FSCaptureSession.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D47A41DE3DE2600326D0B /* FSCaptureSession.m */; };
 		E28C00DD1DE956E300D9EDF4 /* FSCapturedMomentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E28C00DC1DE956E300D9EDF4 /* FSCapturedMomentCell.m */; };
+		F70678A01DE9684400AFAB24 /* photoShutter2.caf in Resources */ = {isa = PBXBuildFile; fileRef = F706789F1DE9684400AFAB24 /* photoShutter2.caf */; };
 		F7146AE91DE1A792007EE341 /* round_red_close_button_5095.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F7146AE81DE1A792007EE341 /* round_red_close_button_5095.jpg */; };
 		F73CDF3D1DD92A5D00BE5F76 /* FSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F73CDF3C1DD92A5D00BE5F76 /* FSUtils.m */; };
 		F73CDF401DD92BC300BE5F76 /* YTVideosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F73CDF3F1DD92BC300BE5F76 /* YTVideosVC.m */; };
@@ -86,6 +87,7 @@
 		E24D47A61DE3DE3700326D0B /* FSCaptureSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSCaptureSession.h; sourceTree = "<group>"; };
 		E28C00DB1DE956E300D9EDF4 /* FSCapturedMomentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCapturedMomentCell.h; sourceTree = "<group>"; };
 		E28C00DC1DE956E300D9EDF4 /* FSCapturedMomentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCapturedMomentCell.m; sourceTree = "<group>"; };
+		F706789F1DE9684400AFAB24 /* photoShutter2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = photoShutter2.caf; sourceTree = "<group>"; };
 		F7146AE81DE1A792007EE341 /* round_red_close_button_5095.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = round_red_close_button_5095.jpg; sourceTree = "<group>"; };
 		F723E7A81DD3D970001E8FE0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F73CDF3B1DD92A5D00BE5F76 /* FSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSUtils.h; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		E24D47951DE14B3100326D0B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F706789F1DE9684400AFAB24 /* photoShutter2.caf */,
 				F7146AE81DE1A792007EE341 /* round_red_close_button_5095.jpg */,
 				E24D479A1DE14B6300326D0B /* background.png */,
 				E24D479B1DE14B6300326D0B /* page.png */,
@@ -436,6 +439,7 @@
 				E24D479D1DE14B6300326D0B /* page.png in Resources */,
 				F7A44D361DE3E31E00F626AA /* FSMomentsCaptureControlsVC.xib in Resources */,
 				E24D479C1DE14B6300326D0B /* background.png in Resources */,
+				F70678A01DE9684400AFAB24 /* photoShutter2.caf in Resources */,
 				F78042551DD2B796003DE994 /* Assets.xcassets in Resources */,
 				F78042531DD2B796003DE994 /* Main.storyboard in Resources */,
 			);
