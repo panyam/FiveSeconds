@@ -160,7 +160,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_red_close_button_5095.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ZVw-hm-9xO">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_red_close_button_5095.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ZVw-hm-9xO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                                             </imageView>
                                                         </subviews>

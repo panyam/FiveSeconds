@@ -83,19 +83,12 @@
     NSInteger row = [[(AFIndexedCollectionView*) collectionView indexPath] row];
     FSCaptureSession *captureSession = [[FSCaptureSessionStore sharedInstance] sessionAtIndex:row];
     
-    
     FSCapturedMomentCell *cell = (FSCapturedMomentCell*)[collectionView dequeueReusableCellWithReuseIdentifier:CollectionViewCellIdentifier forIndexPath:indexPath];
-
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[captureSession pathForIndex:indexPath.item]]
+    NSURL *url = [NSURL fileURLWithPath:[captureSession pathForIndex:indexPath.item]];
+    
+    [cell.imageView sd_setImageWithURL:url
                       placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     
-    if (indexPath.item == 0)
-        cell.backgroundColor = [UIColor redColor];
-    else if(indexPath.item == 1)
-        cell.backgroundColor = [UIColor blueColor];
-    else
-        cell.backgroundColor = [UIColor greenColor];
-
     return cell;
 }
 
