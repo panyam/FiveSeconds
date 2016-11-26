@@ -35,8 +35,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //return FSCaptureSessionStore.sharedInstance.count;
-    return 1;
+    return FSCaptureSessionStore.sharedInstance.count;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -51,8 +50,8 @@
     FSCaptureSessionCell* captureCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     captureCell.dateTakenLabel.text = captureSession.sessionId;
     NSString *defaultPreviewImageUrl = video.defaultPreviewImageUrl;
-    /*[captureCell.previewImageView sd_setImageWithURL:[NSURL URLWithString:defaultPreviewImageUrl]
-                             placeholderImage:[UIImage imageNamed:@"placeholder.png"]];*/
+    [captureCell.previewImageView sd_setImageWithURL:[NSURL URLWithString:defaultPreviewImageUrl]
+                             placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     return captureCell;
 }
 
